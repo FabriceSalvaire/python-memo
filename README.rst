@@ -3,13 +3,13 @@
 .. -*- Mode: rst -*-
 
 ..
-   |@package_name@Url|
-   |@package_name@HomePage|_
-   |@package_name@Doc|_
-   |@package_name@@github|_
-   |@package_name@@readthedocs|_
-   |@package_name@@readthedocs-badge|
-   |@package_name@@pypi|_
+   |PythonMemoUrl|
+   |PythonMemoHomePage|_
+   |PythonMemoDoc|_
+   |PythonMemo@github|_
+   |PythonMemo@readthedocs|_
+   |PythonMemo@readthedocs-badge|
+   |PythonMemo@pypi|_
 
 .. |ohloh| image:: https://www.openhub.net/accounts/230426/widgets/account_tiny.gif
    :target: https://www.openhub.net/accounts/fabricesalvaire
@@ -17,35 +17,35 @@
    :height: 15px
    :width:  80px
 
-.. |@package_name@Url| replace:: @project_url@
+.. |PythonMemoUrl| replace:: @project_url@
 
-.. |@package_name@HomePage| replace:: @package_name@ Home Page
-.. _@package_name@HomePage: @project_url@
+.. |PythonMemoHomePage| replace:: PythonMemo Home Page
+.. _PythonMemoHomePage: @project_url@
 
-.. |@package_name@@readthedocs-badge| image:: https://readthedocs.org/projects/@package_name@/badge/?version=latest
-   :target: http://@package_name@.readthedocs.org/en/latest
+.. |PythonMemo@readthedocs-badge| image:: https://readthedocs.org/projects/PythonMemo/badge/?version=latest
+   :target: http://PythonMemo.readthedocs.org/en/latest
 
-.. |@package_name@@github| replace:: https://github.com/FabriceSalvaire/@package_name@
-.. .. _@package_name@@github: https://github.com/FabriceSalvaire/@package_name@
+.. |PythonMemo@github| replace:: https://github.com/FabriceSalvaire/PythonMemo
+.. .. _PythonMemo@github: https://github.com/FabriceSalvaire/PythonMemo
 
-.. |@package_name@@pypi| replace:: https://pypi.python.org/pypi/@package_name@
-.. .. _@package_name@@pypi: https://pypi.python.org/pypi/@package_name@
+.. |PythonMemo@pypi| replace:: https://pypi.python.org/pypi/PythonMemo
+.. .. _PythonMemo@pypi: https://pypi.python.org/pypi/PythonMemo
 
-.. |Build Status| image:: https://travis-ci.org/FabriceSalvaire/@package_name@.svg?branch=master
-   :target: https://travis-ci.org/FabriceSalvaire/@package_name@
-   :alt: @package_name@ build status @travis-ci.org
+.. |Build Status| image:: https://travis-ci.org/FabriceSalvaire/PythonMemo.svg?branch=master
+   :target: https://travis-ci.org/FabriceSalvaire/PythonMemo
+   :alt: PythonMemo build status @travis-ci.org
 
-.. |Pypi Version| image:: https://img.shields.io/pypi/v/@package_name@.svg
-   :target: https://pypi.python.org/pypi/@package_name@
-   :alt: @package_name@ last version
+.. |Pypi Version| image:: https://img.shields.io/pypi/v/PythonMemo.svg
+   :target: https://pypi.python.org/pypi/PythonMemo
+   :alt: PythonMemo last version
 
-.. |Pypi License| image:: https://img.shields.io/pypi/l/@package_name@.svg
-   :target: https://pypi.python.org/pypi/@package_name@
-   :alt: @package_name@ license
+.. |Pypi License| image:: https://img.shields.io/pypi/l/PythonMemo.svg
+   :target: https://pypi.python.org/pypi/PythonMemo
+   :alt: PythonMemo license
 
-.. |Pypi Python Version| image:: https://img.shields.io/pypi/pyversions/@package_name@.svg
-   :target: https://pypi.python.org/pypi/@package_name@
-   :alt: @package_name@ python version
+.. |Pypi Python Version| image:: https://img.shields.io/pypi/pyversions/PythonMemo.svg
+   :target: https://pypi.python.org/pypi/PythonMemo
+   :alt: PythonMemo python version
 
 ..  coverage test
 ..  https://img.shields.io/pypi/status/Django.svg
@@ -60,70 +60,33 @@
 .. |PyPI| replace:: PyPI
 .. _PyPI: https://pypi.python.org/pypi
 
-.. |Numpy| replace:: Numpy
-.. _Numpy: http://www.numpy.org
-
-.. |IPython| replace:: IPython
-.. _IPython: http://ipython.org
-
 .. |Sphinx| replace:: Sphinx
 .. _Sphinx: http://sphinx-doc.org
 
 .. End
 
-============
- @package_name@
-============
+=================
+ A Python 3 Memo
+=================
 
-|Pypi License|
-|Pypi Python Version|
-
-|Pypi Version|
-
-* Quick Link to `Production Branch <https://github.com/FabriceSalvaire/@package_name@/tree/master>`_
-* Quick Link to `Devel Branch <https://github.com/FabriceSalvaire/@package_name@/tree/devel>`_
+* Quick Link to `Production Branch <https://github.com/FabriceSalvaire/PythonMemo/tree/master>`_
+* Quick Link to `Devel Branch <https://github.com/FabriceSalvaire/PythonMemo/tree/devel>`_
 
 Overview
 ========
 
-What is @package_name@ ?
----------------------
+This repository contains a Python3 Memo.
 
-@package_name@ is a Python module which implements a unit framework.
+Sources are licensed under `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
 
 Where is the Documentation ?
 ----------------------------
 
-The documentation is available on the |@package_name@HomePage|_.
-
-What are the main features ?
-----------------------------
-
-* to be completed
-
-How to install it ?
--------------------
-
-Look at the `installation <@project_url@/installation.html>`_ section in the documentation.
+The documentation is available on the |PythonMemoHomePage|_.
 
 Credits
 =======
 
 Authors: `Fabrice Salvaire <http://fabrice-salvaire.fr>`_
-
-News
-====
-
-.. -*- Mode: rst -*-
-
-
-.. no title here
-
-V0 @year@-10-01
--------------
-
-Started project
-
-.. End
 
 .. End
