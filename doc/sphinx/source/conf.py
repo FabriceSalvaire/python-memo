@@ -87,7 +87,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'PythonMemo'
+project = 'Python3 Memo'
 copyright = '{0.year}, Fabrice Salvaire'.format(datetime.now())
 
 # The version info for the project you're documenting, acts as replacement for
@@ -285,15 +285,6 @@ latex_logo = None
 # latex_domain_indices = True
 
 ####################################################################################################
-#
-# Options for manual page output
-#
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    ('index', 'PythonMemo', 'PythonMemo Documentation', ['Fabrice Salvaire'], 1)
-]
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
