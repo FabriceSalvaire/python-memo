@@ -22,6 +22,15 @@ else:
     print('end')
 #o#
 
+for i in range(100):
+    if not (10 < i < 16):
+        continue
+    print(i)
+else:
+    print('end')
+#o#
+
+
 #!#
 #!# While Loop
 #!# ----------

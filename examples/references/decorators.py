@@ -13,7 +13,7 @@ from Tools import *
 #!# Function Decorators
 #!# -------------------
 #!#
-#!# `PEP 318 -- Class Decorators <https://www.python.org/dev/peps/pep-318>`_
+#!# `PEP 318 -- Decorators for Functions and Methods <https://www.python.org/dev/peps/pep-0318>`_
 
 def func_decorator_1(func):
     print_function('func_decorator_1', func)

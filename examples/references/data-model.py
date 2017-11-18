@@ -4,7 +4,8 @@
 #!#
 #!# This page contains a memo of the Python 3.6 data model.
 #!#
-#!# For a complete reference documentation, look at https://docs.python.org/3/reference/datamodel.html
+#!# For a complete reference documentation, look at
+#!# https://docs.python.org/3/reference/datamodel.html
 #!#
 
 ####################################################################################################
@@ -135,8 +136,8 @@ foo = FooWithNew(1, 2, attr1='abc')
 
 ####################################################################################################
 #!#
-#!# Subclass
-#!# --------
+#!# Subclasses
+#!# ----------
 
 #h# print_rule()
 
