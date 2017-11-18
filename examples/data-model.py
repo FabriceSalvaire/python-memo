@@ -1,62 +1,37 @@
-####################################################################################################
-#
-# https://docs.python.org/3/reference/datamodel.html
-#
-####################################################################################################
+#!#
+#!# ====================
+#!#  Python3 Data model
+#!# ====================
+#!#
+#!# This page contains a memo of the Python 3.6 data model.
+#!#
+#!# For a complete reference documentation, look at https://docs.python.org/3/reference/datamodel.html
+#!#
 
 ####################################################################################################
 
 import collections
+import os
+
+from Tools import *
 
 ####################################################################################################
-
-def format_method_name(obj, method_name):
-    if isinstance(obj, str):
-        return obj + '.' + method_name
-    else:
-        return obj.__class__.__name__ + '.' + method_name
-
-def print_method(obj, method_name, *args):
-    print(format_method_name(obj, method_name), *args)
-
-def print_rule():
-    print('\n')
-    print('#'*100)
-    print('\n')
-
-####################################################################################################
-#
-# At __main__ level
-#
+#!#
+#!# At __main__ level
+#!# -----------------
 
 a_global = 1
 
-print('At Global level:')
-print('file:', __file__)
-print()
+print('file:', os.path.basename(__file__))
+
+#o#
 
 ####################################################################################################
-#
-# Basic customization
-#
+#!#
+#!# Basic Customisation
+#!# -------------------
 
-print_rule()
-
-class FooWithNew:
-
-    def __new__(cls, *args, **kwargs):
-        print_method('FooWithNew', '__new__', cls, args, kwargs)
-
-    def __init__(self, *args, **kwargs):
-        # never called
-        print_method(self, '__init__', self, args, kwargs)
-
-
-foo = FooWithNew(1, 2, attr1='abc')
-
-####################################################################################################
-
-print_rule()
+#h# print_rule()
 
 class Foo:
 
@@ -93,6 +68,7 @@ class Foo:
     # def __hash__(self):
     # def __bool__(self):
 
+#!#
 
 foo = Foo(1, 2, attr1='abc')
 
@@ -128,12 +104,33 @@ print(foo.method.attr1) # 'abc'
 
 foo.method(1, 2)
 
-####################################################################################################
-#
-# Subclass
-#
+#o#
 
-print_rule()
+####################################################################################################
+
+#h# print_rule()
+
+class FooWithNew:
+
+    def __new__(cls, *args, **kwargs):
+        print_method('FooWithNew', '__new__', cls, args, kwargs)
+
+    def __init__(self, *args, **kwargs):
+        # never called
+        print_method(self, '__init__', self, args, kwargs)
+
+#!#
+
+foo = FooWithNew(1, 2, attr1='abc')
+
+#o#
+
+####################################################################################################
+#!#
+#!# Subclass
+#!# --------
+
+#h# print_rule()
 
 class Bar(Foo):
 
@@ -141,15 +138,18 @@ class Bar(Foo):
         print_method(self, '__init__', self, args, kwargs)
         super().__init__(*args, **kwargs)
 
+#!#
 
 obj = Bar(1, 2, attr1='abc')
 
-####################################################################################################
-#
-# Customizing attribute access
-#
+#o#
 
-print_rule()
+####################################################################################################
+#!#
+#!# Customizing Attribute Access
+#!# ----------------------------
+
+#h# print_rule()
 
 class Attributes:
 
@@ -167,10 +167,13 @@ class Attributes:
 
     # def __dir__(self):
 
+#!#
 
 obj = Attributes()
 print(obj.attr1)
 print(obj.foo)
+
+#o#
 
 ####################################################################################################
 
@@ -185,17 +188,20 @@ class Attributes2:
         # return type.__getattribute__(self, name)
         # return object.__getattribute__(self, name)
 
+#!#
 
 obj = Attributes2()
 # print(obj.attr1)
 #obj.foo
 
-####################################################################################################
-#
-# Implementing Descriptors
-#
+#o#
 
-print_rule()
+####################################################################################################
+#!#
+#!# Implementing Descriptors
+#!# ------------------------
+
+#h# print_rule()
 
 class Descriptor:
 
@@ -222,30 +228,41 @@ class Descriptor:
 class UsingDescriptor:
     attr1 = Descriptor('attr1', 1) # class __set_name__(__main__.UsingDescriptor, 'attr1')
 
-# Invoking Descriptors
+#!# Invoking Descriptors
 
 obj = UsingDescriptor()
 print(obj.attr1) # call __get__
 obj.attr1 = 2 # call __set__
 del obj.attr1 # call __delete__
 
-####################################################################################################
+#o#
 
-print_rule()
+####################################################################################################
+#!#
+#!# Slots
+#!# -----
+
+#h# print_rule()
 
 class Slotted:
 
     __slots__ = ('x', 'y')
 
+#!#
 
 obj = Slotted()
 print(obj.__slots__)
 obj.x = 1 # implemented as descriptor
 obj.y = 2
 
-####################################################################################################
+#o#
 
-print_rule()
+####################################################################################################
+#!#
+#!# Properties
+#!# ----------
+
+#h# print_rule()
 
 class Property:
 
@@ -261,11 +278,11 @@ class Property:
     x = property(get_x, set_x, del_x, "I'm the 'x' property.")
 
 ####################################################################################################
-#
-#  Customizing class creation
-#
+#!#
+#!# Customising Class Creation
+#!# --------------------------
 
-print_rule()
+#h# print_rule()
 
 class Philosopher:
     def __init_subclass__(cls, default_name, **kwargs):
@@ -277,16 +294,19 @@ class Philosopher:
 class AustralianPhilosopher(Philosopher, default_name="Bruce"):
     pass
 
+#!#
 
 obj = Philosopher()
 obj = AustralianPhilosopher()
 
-####################################################################################################
-#
-# Metaclass
-#
+#o#
 
-print_rule()
+####################################################################################################
+#!#
+#!# Metaclass
+#!# ---------
+
+#h# print_rule()
 
 class Metaclass(type):
 
@@ -297,54 +317,77 @@ class Metaclass(type):
 
     def __new__(meta_cls, name, bases, namespace, **kwargs):
         print_method('Metaclass', '__new__', meta_cls, name, bases, namespace, kwargs)
-
         result = type.__new__(meta_cls, name, bases, dict(namespace))
         result.members = tuple(namespace)
         return result
 
+    def __init__(cls, name, bases, namespace):
+        # Attention: first parameter is cls, not meta_cls !
+        print_method('Metaclass', '__init__', cls, name, bases, namespace)
+        print_method('Metaclass', '__init__', cls.__dict__)
+        type.__init__(cls, name, bases, namespace)
+        # super(Metaclass, cls).__init__(name, bases, namespace)
 
 class Metaclassed(metaclass=Metaclass):
+
+    def __init__(self, *args, **kwargs):
+        print_method(self, '__init__', self, args, kwargs)
+
     def one(self): pass
     def two(self): pass
     def three(self): pass
     def four(self): pass
+#o#
+
+pretty_print(Metaclassed.__dict__)
+#o#
 
 class SubMetaclassed(Metaclassed):
     pass
-
+#o#
 
 print(Metaclassed.members)
-# obj = Metaclassed()
+#o#
+
+obj = Metaclassed(1, 2, attr1='abc')
+#o#
+
+obj = SubMetaclassed(1, 2, attr1='abc')
+#o#
 
 ####################################################################################################
-#
-# Customizing instance and subclass checks
-#
+#!#
+#!# Customising Instance and Subclass Checks
+#!# ----------------------------------------
 
 # class.__instancecheck__(self, instance)
 # class.__subclasscheck__(self, subclass)
 
 ####################################################################################################
-#
-# Emulating callable objects
-#
+#!#
+#!# Emulating Callable Objects
+#!# --------------------------
 
-print_rule()
+#h# print_rule()
 
 class Callable:
 
     def __call__(self, *args, **kwargs):
         print_method(self, '__call__', args, kwargs)
 
+#!#
+
 obj = Callable()
 obj(1, 2, attr1='abc') # call Callable.__call__
 
-####################################################################################################
-#
-# Emulating container types
-#
+#o#
 
-print_rule()
+####################################################################################################
+#!#
+#!# Emulating Container Types
+#!# -------------------------
+
+#h# print_rule()
 
 class Container:
 
@@ -366,6 +409,7 @@ class Container:
         return self._values[key] # key can be a slice
 
     def __missing__(self, key):
+        # Called by dict.__getitem__() to implement self[key] for dict subclasses when key is not in the dictionary.
         print_method(self, '__missing__')
 
     def __setitem__(self, key, value):
@@ -388,6 +432,7 @@ class Container:
         print_method(self, '__contains__', item)
         return item in self._values
 
+#!#
 
 obj = Container(*range(5))
 print(obj[1])
@@ -397,12 +442,17 @@ print(list(obj))
 print(list(reversed(obj)))
 print(1 in obj)
 
+#o#
+
 ####################################################################################################
-#
-# Emulating numeric types
-#
+#!#
+#!# Emulating Numeric Types
+#!# -----------------------
 
 class Numeric:
+
+    # These methods are called to implement the binary arithmetic operations:
+    # + - * @ / // % divmod() pow() ** << >> & ^ |
 
     def __add__(self, other):
         pass
@@ -446,6 +496,9 @@ class Numeric:
     def __or__(self, other):
         pass
 
+    # These methods are called to implement the binary arithmetic operations with reflected (swapped) operands:
+    # + - * @ / // % divmod() pow() ** << >> & ^ |
+
     def __radd__(self, other):
         pass
 
@@ -488,6 +541,9 @@ class Numeric:
     def __ror__(self, other):
         pass
 
+    # These methods are called to implement the augmented arithmetic assignments:
+    # += -= *= @= /= //= %= **= <<= >>= &= ^= |=
+
     def __iadd__(self, other):
         pass
 
@@ -527,6 +583,9 @@ class Numeric:
     def __ior__(self, other):
         pass
 
+    # Called to implement the unary arithmetic operations:
+    # - + abs() ~
+
     def __neg__(self):
         pass
 
@@ -538,6 +597,8 @@ class Numeric:
 
     def __invert__(self):
         pass
+
+    # Called to implement the built-in functions complex(), int(), float() and round():
 
     def __complex__(self):
         pass
@@ -552,5 +613,92 @@ class Numeric:
         pass
 
     def __index__(self):
+        # Called to implement operator.index()
         pass
 
+####################################################################################################
+#!#
+#!# With Statement Context Managers
+#!# -------------------------------
+
+class ContextManager:
+
+    def __init__(self, *args, **kwargs):
+        print_method(self, '__init__', self, args, kwargs)
+
+    def __enter__(self):
+        print_method(self, '__enter__', self)
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print_method(self, '__exit__', self, exc_type, exc_value, traceback)
+
+#!#
+
+with ContextManager(1, 2, attr1='abc') as obj:
+    print('here', obj)
+
+#o#
+
+with ContextManager(1, 2, attr1='abc') as obj:
+    print('here', obj)
+    raise NameError('an error')
+
+#o#
+
+####################################################################################################
+#!#
+#!# Coroutines
+#!# ----------
+
+#!# Awaitable Objects
+#!# ~~~~~~~~~~~~~~~~~
+
+# object.__await__(self)
+
+#!# Coroutine Objects
+#!# ~~~~~~~~~~~~~~~~~
+
+# coroutine.send(value)
+# coroutine.throw(type[, value[, traceback]])
+# coroutine.close()
+
+#!# Asynchronous Iterators
+#!# ~~~~~~~~~~~~~~~~~~~~~~
+#!#
+#!# An asynchronous iterable is able to call asynchronous code in its __aiter__ implementation, and
+#!# an asynchronous iterator can call asynchronous code in its __anext__ method.
+
+class Reader:
+
+    async def readline(self):
+        pass
+
+    def __aiter__(self):
+        # Must return an asynchronous iterator object.
+        return self
+
+    async def __anext__(self):
+        # Must return an awaitable resulting in a next value of the iterator.
+        # Should raise a StopAsyncIteration error when the iteration is over.
+        val = await self.readline()
+        if val == b'':
+            raise StopAsyncIteration
+        return val
+
+#!# Asynchronous Context Managers
+#!# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#!#
+#!# An asynchronous context manager is a context manager that is able to suspend execution in its
+#!# __aenter__ and __aexit__ methods.
+
+class AsyncContextManager:
+
+    async def __aenter__(self):
+        # This method is semantically similar to the __enter__(),
+        # with only difference that it must return an awaitable.
+        await log('entering context')
+
+    async def __aexit__(self, exc_type, exc, tb):
+        # This method is semantically similar to the __exit__(),
+        # with only difference that it must return an awaitable.
+        await log('exiting context')
