@@ -23,8 +23,9 @@
 Overview
 ********
 
-This web site contains a Python3 Memo licensed under `CC BY-NC-SA 4.0
-<https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
+This web site contains a Python3 Memo or cheat sheet.
+
+The content is licensed under `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
 
 Theses pages was generated using the `AutoSphinx <https://fabricesalvaire.github.io/AutoSphinx>`_
 and |Sphinx|_ tools, sources are hosted on `Github
