@@ -72,6 +72,7 @@ extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.ifconfig',
               'sphinx.ext.viewcode',
               'sphinxcontrib.getthecode',
+              'sphinx_sitemap',
               ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -87,7 +88,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Python3 Memo'
+project = 'Python 3 Memo'
 copyright = '{0.year}, Fabrice Salvaire'.format(datetime.now())
 
 # The version info for the project you're documenting, acts as replacement for
@@ -296,3 +297,11 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 
 # Don't work
 # mathjax_path = 'MathJax/MathJax.js'
+
+####################################################################################################
+#
+# sphinx-sitemap
+# https://github.com/jdillard/sphinx-sitemap
+#
+
+site_url = 'https://python-memo.fabrice-salvaire.fr/' # could use setup_dict

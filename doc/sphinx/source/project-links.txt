@@ -1,0 +1,52 @@
+.. -*- Mode: rst -*-
+
+..
+   |PythonMemoUrl|
+   |PythonMemoHomePage|_
+   |PythonMemoDoc|_
+   |PythonMemo@github|_
+   |PythonMemo@readthedocs|_
+   |PythonMemo@readthedocs-badge|
+   |PythonMemo@pypi|_
+
+.. |ohloh| image:: https://www.openhub.net/accounts/230426/widgets/account_tiny.gif
+   :target: https://www.openhub.net/accounts/fabricesalvaire
+   :alt: Fabrice Salvaire's Ohloh profile
+   :height: 15px
+   :width:  80px
+
+.. |PythonMemoUrl| replace:: https://python-memo.fabrice-salvaire.fr
+
+.. |PythonMemoHomePage| replace:: PythonMemo Home Page
+.. _PythonMemoHomePage: https://python-memo.fabrice-salvaire.fr
+
+.. |PythonMemo@readthedocs-badge| image:: https://readthedocs.org/projects/PythonMemo/badge/?version=latest
+   :target: http://PythonMemo.readthedocs.org/en/latest
+
+.. |PythonMemo@github| replace:: https://github.com/FabriceSalvaire/PythonMemo
+.. .. _PythonMemo@github: https://github.com/FabriceSalvaire/PythonMemo
+
+.. |PythonMemo@pypi| replace:: https://pypi.python.org/pypi/PythonMemo
+.. .. _PythonMemo@pypi: https://pypi.python.org/pypi/PythonMemo
+
+.. |Build Status| image:: https://travis-ci.org/FabriceSalvaire/PythonMemo.svg?branch=master
+   :target: https://travis-ci.org/FabriceSalvaire/PythonMemo
+   :alt: PythonMemo build status @travis-ci.org
+
+.. |Pypi Version| image:: https://img.shields.io/pypi/v/PythonMemo.svg
+   :target: https://pypi.python.org/pypi/PythonMemo
+   :alt: PythonMemo last version
+
+.. |Pypi License| image:: https://img.shields.io/pypi/l/PythonMemo.svg
+   :target: https://pypi.python.org/pypi/PythonMemo
+   :alt: PythonMemo license
+
+.. |Pypi Python Version| image:: https://img.shields.io/pypi/pyversions/PythonMemo.svg
+   :target: https://pypi.python.org/pypi/PythonMemo
+   :alt: PythonMemo python version
+
+..  coverage test
+..  https://img.shields.io/pypi/status/Django.svg
+..  https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star
+
+.. End

@@ -1,6 +1,6 @@
 .. -*- Mode: rst -*-
 
-.. _examples-page:
+.. _memo-pages:
 
 ======
  Memo

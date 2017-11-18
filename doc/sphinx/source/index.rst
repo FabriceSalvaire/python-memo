@@ -4,10 +4,32 @@
 .. raw:: html
 
     <style>
+        .small-text {font-size: smaller}
+
 	.spacer {height: 30px}
 
         .reduced-width {
 	    max-width: 800px
+        }
+
+        .row {clear: both}
+
+        @media only screen and (min-width: 1000px),
+               only screen and (min-width: 500px) and (max-width: 768px){
+
+            .column {
+                padding-left: 5px;
+                padding-right: 5px;
+                float: left;
+            }
+
+            .column2  {
+                width: 50%;
+            }
+
+            .column3  {
+                width: 33.3%;
+            }
         }
     </style>
 
@@ -15,25 +37,76 @@
 
    <div class="reduced-width">
 
-################
- A Python3 Memo
-################
+#################
+ A Python 3 Memo
+#################
+
+.. Fixme: Logo
+.. .. image:: /_static/logo.png
+   :alt: Musica logo
+   :width: 750
 
 ********
 Overview
 ********
 
-This web site contains a Python3 Memo or cheat sheet.
+This web site contains a Python 3 memo, sometimes called cheat sheet.
 
-The content is licensed under `CC BY-NC-SA 4.0 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
+.. raw:: html
 
-Theses pages was generated using the `AutoSphinx <https://fabricesalvaire.github.io/AutoSphinx>`_
-and |Sphinx|_ tools, sources are hosted on `Github
-<https://github.com/FabriceSalvaire/python-memo>`_.
+   <div class="spacer"></div>
 
-Please fill issues on this `page <https://github.com/FabriceSalvaire/python-memo/issues>`_.
+.. rst-class:: clearfix row
 
-**Note:** you can download or show the raw python file using the icons on top of the pages.
+.. rst-class:: column column2
+
+:ref:`introduction`
+===================
+
+To read first
+
+:ref:`python-news`
+==================
+
+Quick links to changes
+
+.. rst-class:: column column2
+
+:ref:`reference-pages`
+======================
+
+The synthetic reference
+
+.. rst-class:: column column2
+
+:ref:`snippets`
+===============
+
+Code snippets
+
+.. rst-class:: column column2
+
+:ref:`larger-examples`
+======================
+
+Real examples
+
+.. rst-class:: column column2
+
+
+:ref:`key-packages`
+===================
+
+Most important packages
+
+.. Essential packages in Python
+
+.. rst-class:: column column2
+
+:ref:`colophon`
+===============
+
+How to get sources and fill issues
 
 .. raw:: html
 
@@ -55,6 +128,10 @@ Please fill issues on this `page <https://github.com/FabriceSalvaire/python-memo
   :maxdepth: 3
   :numbered:
 
+  introduction.rst
+  python-news.rst
   examples/index.rst
+  key-packages.rst
+  colophon.rst
 
 .. End
