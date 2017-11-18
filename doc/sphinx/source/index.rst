@@ -23,8 +23,16 @@
 Overview
 ********
 
-These pages contains a Python3 Memo licensed under `CC BY-NC-SA 4.0
+This web site contains a Python3 Memo licensed under `CC BY-NC-SA 4.0
 <https://creativecommons.org/licenses/by-nc-sa/4.0/>`_.
+
+Theses pages was generated using the `AutoSphinx <https://fabricesalvaire.github.io/AutoSphinx>`_
+and |Sphinx|_ tools, sources are hosted on `Github
+<https://github.com/FabriceSalvaire/python-memo>`_.
+
+Please fill issues on this `page <https://github.com/FabriceSalvaire/python-memo/issues>`_.
+
+**Note:** you can download or show the raw python file using the icons on top of the pages.
 
 .. raw:: html
 
