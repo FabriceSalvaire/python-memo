@@ -1,7 +1,6 @@
-#!#
-#!# ====================
-#!#  Python3 Data model
-#!# ====================
+#!# ============
+#!#  Data model
+#!# ============
 #!#
 #!# This page contains a memo of the Python 3.6 data model.
 #!#
@@ -71,18 +70,24 @@ class Foo:
 #!#
 
 foo = Foo(1, 2, attr1='abc')
+#o#
 
-print('\nFoo Class:')
+print(Foo.__class__)
 print('doc:', Foo.__doc__)
-print('dict:', Foo.__dict__)
+#o#
 
-print('\nFoo.method Method:')
+pretty_print('dict:', Foo.__dict__)
+#o#
+
 print('doc:', Foo.method.__doc__)
 print('name:', Foo.method.__name__) # method
 print('qualname:', Foo.method.__qualname__) # Foo.method
 print('module:', Foo.method.__module__) # __main__
+#o#
+
 print('code:', Foo.method.__code__)
 print('globals:', Foo.method.__globals__)
+#o#
 
 # A tuple containing default argument values for those arguments that have defaults, or None if no
 # arguments have a default value
@@ -90,8 +95,7 @@ print('defaults:', Foo.method.__defaults__) # ('abc',)
 
 # A dict containing defaults for keyword-only parameters.
 print('kwdefaults:', Foo.method.__kwdefaults__) # None
-
-print(foo.method.attr1) # 'abc'
+#o#
 
 # None or a tuple of cells that contain bindings for the function’s free variables.
 # print('closure:', Foo.method.__closure__)
@@ -99,12 +103,16 @@ print(foo.method.attr1) # 'abc'
 # 'return' for the return annotation, if provided.
 # print('annotations:', Foo.method.__annotations__)
 
-# __func__
-# __self__
+#!#
+
+print(foo.method.attr1) # 'abc'
+#o#
 
 foo.method(1, 2)
-
 #o#
+
+#?# __func__
+#?# __self__
 
 ####################################################################################################
 
@@ -191,10 +199,10 @@ class Attributes2:
 #!#
 
 obj = Attributes2()
-# print(obj.attr1)
+#print(obj.attr1)
 #obj.foo
 
-#o#
+##o#
 
 ####################################################################################################
 #!#
@@ -327,6 +335,10 @@ class Metaclass(type):
         print_method('Metaclass', '__init__', cls.__dict__)
         type.__init__(cls, name, bases, namespace)
         # super(Metaclass, cls).__init__(name, bases, namespace)
+
+    def __call__(cls, *args, **kwargs):
+        print_method(cls, '__call__', cls, args, kwargs)
+        return type.__call__(cls, *args, **kwargs)
 
 class Metaclassed(metaclass=Metaclass):
 
@@ -639,10 +651,12 @@ with ContextManager(1, 2, attr1='abc') as obj:
 
 #o#
 
-with ContextManager(1, 2, attr1='abc') as obj:
-    print('here', obj)
-    raise NameError('an error')
-
+try:
+    with ContextManager(1, 2, attr1='abc') as obj:
+        print('here', obj)
+        raise NameError('an error')
+except NameError as exception:
+    print(exception)
 #o#
 
 ####################################################################################################

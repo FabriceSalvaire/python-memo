@@ -11,7 +11,7 @@
 
 __all__ = [
     'pretty_print',
-    'print_func',
+    'print_function',
     'print_method',
     'print_rule',
 ]
@@ -34,7 +34,7 @@ def pretty_print(*args):
         for line in pretty_printer.pformat(arg).split('\n'):
             print(' '*4 + line)
 
-def print_func(func_name, *args):
+def print_function(func_name, *args):
     print('@' + func_name)
     pretty_print(*args)
 
