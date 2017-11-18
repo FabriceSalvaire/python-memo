@@ -1,5 +1,5 @@
 #!# ============
-#!#  Data model
+#!#  Data Model
 #!# ============
 #!#
 #!# This page contains a memo of the Python 3.6 data model.
