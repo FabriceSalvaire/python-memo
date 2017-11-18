@@ -1,7 +1,8 @@
-#!# =================
-#!#  PEP 342 Example
-#!# =================
+#!# =======================================================
+#!#  PEP 342 -- Coroutines via Enhanced Generators Example
+#!# =======================================================
 
+#!#
 #!# This article provides a full Python 3 example illustrating the use of coroutines via enhanced
 #!# generators as described in the `PEP 342 document <https://www.python.org/dev/peps/pep-0342>`_.
 #!#
@@ -11,17 +12,20 @@
 #!# 342's example for Python 3, the first one is implemented without coroutines to serve as
 #!# reference and the second one makes use of coroutines. This example implements a thumbnail pager.
 
+#!#
+#!# Common parts
+#!# ------------
+
 ####################################################################################################
 
 import os
 import tempfile
 
-#!# Basic Implementation
-#!# --------------------
-
 ####################################################################################################
 
-class PageSize(object):
+#!# We define two classes:
+
+class PageSize:
 
     ##############################################
 
@@ -41,7 +45,7 @@ class PageSize(object):
 
 ####################################################################################################
 
-class Image(object):
+class Image:
 
     ##############################################
 
@@ -72,7 +76,33 @@ class Image(object):
 
 ####################################################################################################
 
-class JpegWriter(object):
+#!# And a function to run the example:
+
+def write_thumbnails(thumbnail_pager, jpeg_writer, page_size, thumb_size, images, output_dir):
+    pipeline = thumbnail_pager(page_size, thumb_size, jpeg_writer(output_dir))
+    for image in images:
+        print("send", image.name)
+        pipeline.send(image)
+    print("close")
+    pipeline.close()
+
+def run_exemple(thumbnail_pager, jpeg_writer):
+    with tempfile.TemporaryDirectory() as output_dir:
+        write_thumbnails(
+            thumbnail_pager,
+            jpeg_writer,
+            page_size=PageSize(200, 300),
+            thumb_size=PageSize(100, 100),
+            images=[Image("image{}".format(i), None) for i in range(10)],
+            output_dir=output_dir)
+
+#!#
+#!# Basic Implementation
+#!# --------------------
+
+####################################################################################################
+
+class JpegWriter:
 
     ##############################################
 
@@ -89,7 +119,7 @@ class JpegWriter(object):
 
 ####################################################################################################
 
-class ThumbnailPager(object):
+class ThumbnailPager:
 
     ##############################################
 
@@ -124,27 +154,12 @@ class ThumbnailPager(object):
     ##############################################
 
     def close(self):
-
         if self.pending:
             self.destination.send(self.page)
 
 ####################################################################################################
 
-def write_thumbnails(page_size, thumb_size, images, output_dir):
-    pipeline = ThumbnailPager(page_size, thumb_size, JpegWriter(output_dir))
-    for image in images:
-        print("pipeline.send", image.name)
-        pipeline.send(image)
-    print("pipeline.close")
-    pipeline.close()
-
-####################################################################################################
-
-with tempfile.TemporaryDirectory() as output_dir:
-    write_thumbnails(page_size=PageSize(200, 300),
-                     thumb_size=PageSize(100, 100),
-                     images=[Image("image{}".format(i), None) for i in range(10)],
-                     output_dir=output_dir)
+run_exemple(ThumbnailPager, JpegWriter)
 #o#
 
 ####################################################################################################
@@ -163,58 +178,6 @@ def consumer(func):
     wrapper.__dict__ = func.__dict__
     wrapper.__doc__  = func.__doc__
     return wrapper
-
-####################################################################################################
-
-class PageSize(object):
-
-    ##############################################
-
-    def __init__(self, x, y):
-
-        self.x = x
-        self.y = y
-
-    ##############################################
-
-    def __truediv__(self, other):
-        return int(self.x / other.x), int(self.y / other.y)
-
-    ##############################################
-
-    def __repr__(self):
-        return "PageSize {}x{}".format(self.x, self.y)
-
-####################################################################################################
-
-class Image(object):
-
-    ##############################################
-
-    def __init__(self, name, page_size):
-        self.name = name
-        self.page_size = page_size
-
-    ##############################################
-
-    def __repr__(self):
-        return 'Image {}'.format(self.name)
-
-    ##############################################
-
-    def paste(self, image, x, y):
-        print("paste {} in {} at ({}, {})".format(image.name, self.name, x, y))
-
-    ##############################################
-
-    def create_thumbnail(self, thumb_size):
-        print('create thumbnail of', self.name)
-        return self.__class__('thumb_' + self.name, thumb_size)
-
-    ##############################################
-
-    def write_image(self, filename):
-        print('write image', self.name, filename, '\n')
 
 ####################################################################################################
 
@@ -253,19 +216,5 @@ def thumbnail_pager(page_size, thumb_size, destination):
 
 ####################################################################################################
 
-def write_thumbnails(page_size, thumb_size, images, output_dir):
-    pipeline = thumbnail_pager(page_size, thumb_size, jpeg_writer(output_dir))
-    for image in images:
-        print("send", image.name)
-        pipeline.send(image)
-    print("close")
-    pipeline.close()
-
-####################################################################################################
-
-with tempfile.TemporaryDirectory() as output_dir:
-    write_thumbnails(page_size=PageSize(200, 300),
-                     thumb_size=PageSize(100, 100),
-                     images=[Image("image{}".format(i), None) for i in range(10)],
-                     output_dir=output_dir)
+run_exemple(thumbnail_pager, jpeg_writer)
 #o#
