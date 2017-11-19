@@ -290,6 +290,8 @@ class Property:
 #!#
 #!# Customising Class Creation
 #!# --------------------------
+#!#
+#!# `PEP 487: Simpler customization of class creation <https://www.python.org/dev/peps/pep-0487>`_
 
 #h# print_rule()
 
@@ -299,15 +301,27 @@ class Philosopher:
         super().__init_subclass__(**kwargs)
         cls.default_name = default_name
 
-
 class AustralianPhilosopher(Philosopher, default_name="Bruce"):
     pass
 
-#!#
-
 obj = Philosopher()
 obj = AustralianPhilosopher()
+#o#
 
+class PluginBase:
+    subclasses = []
+
+    def __init_subclass__(cls, **kwargs):
+        super().__init_subclass__(**kwargs)
+        cls.subclasses.append(cls)
+
+class Plugin1(PluginBase):
+    pass
+
+class Plugin2(PluginBase):
+    pass
+
+print(PluginBase.subclasses)
 #o#
 
 ####################################################################################################
@@ -641,6 +655,7 @@ class ContextManager:
 
     def __enter__(self):
         print_method(self, '__enter__', self)
+        return 'something' # value for as
 
     def __exit__(self, exc_type, exc_value, traceback):
         print_method(self, '__exit__', self, exc_type, exc_value, traceback)
