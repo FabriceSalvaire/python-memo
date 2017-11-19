@@ -17,10 +17,10 @@
    :height: 15px
    :width:  80px
 
-.. |PythonMemoUrl| replace:: @project_url@
+.. |PythonMemoUrl| replace:: https://python-memo.fabrice-salvaire.fr
 
 .. |PythonMemoHomePage| replace:: PythonMemo Home Page
-.. _PythonMemoHomePage: @project_url@
+.. _PythonMemoHomePage: https://python-memo.fabrice-salvaire.fr
 
 .. |PythonMemo@readthedocs-badge| image:: https://readthedocs.org/projects/PythonMemo/badge/?version=latest
    :target: http://PythonMemo.readthedocs.org/en/latest
