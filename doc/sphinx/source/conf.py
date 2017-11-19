@@ -89,7 +89,9 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Python 3 Memo'
-copyright = '{0.year}, Fabrice Salvaire'.format(datetime.now())
+# We cannot set <a> link here
+COPYRIGHT_TEMPLATE = '{0.year}, Fabrice Salvaire, CC BY-NC-SA'
+copyright = COPYRIGHT_TEMPLATE.format(datetime.now())
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

@@ -1,37 +1,6 @@
 .. include:: abbreviation.txt
 .. include:: project-links.txt
-
-.. raw:: html
-
-    <style>
-        .small-text {font-size: smaller}
-
-	.spacer {height: 30px}
-
-        .reduced-width {
-	    max-width: 800px
-        }
-
-        .row {clear: both}
-
-        @media only screen and (min-width: 1000px),
-               only screen and (min-width: 500px) and (max-width: 768px){
-
-            .column {
-                padding-left: 5px;
-                padding-right: 5px;
-                float: left;
-            }
-
-            .column2  {
-                width: 50%;
-            }
-
-            .column3  {
-                width: 33.3%;
-            }
-        }
-    </style>
+.. include:: css-tricks.txt
 
 .. raw:: html
 
@@ -50,7 +19,9 @@
 Overview
 ********
 
-This web site contains a Python 3 memo, sometimes called cheat sheet.
+The |Python|_ language and its ecosystem are more and more larger and complex ...  To stay efficient
+at programming, this web site offers a Python 3 memo, sometimes called cheat sheet, as well as code
+snippets, larger examples and a selection of key packages.
 
 .. raw:: html
 
@@ -133,5 +104,6 @@ How to get sources and fill issues
   examples/index.rst
   key-packages.rst
   colophon.rst
+  copyright.rst
 
 .. End

@@ -1,7 +1,0 @@
-.. -*- Mode: rst -*-
-
-.. _memo-pages:
-
-======
- Memo
-======
