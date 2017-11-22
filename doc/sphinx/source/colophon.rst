@@ -1,6 +1,6 @@
-.. _colophon:
-
 .. include:: abbreviation.txt
+
+.. _colophon:
 
 ==========
  Colophon

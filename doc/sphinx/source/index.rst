@@ -64,13 +64,19 @@ Real examples
 
 .. rst-class:: column column2
 
-
 :ref:`key-packages`
 ===================
 
 Most important packages
 
 .. Essential packages in Python
+
+.. rst-class:: column column2
+
+:ref:`external-links`
+=====================
+
+Links you must know
 
 .. rst-class:: column column2
 
@@ -103,7 +109,7 @@ How to get sources and fill issues
   python-news.rst
   examples/index.rst
   key-packages.rst
+  external-links.rst
   colophon.rst
+  proposal.rst
   copyright.rst
-
-.. End
