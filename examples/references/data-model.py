@@ -212,6 +212,8 @@ obj = Attributes2()
 
 #h# print_rule()
 
+#!# :frompy:`3.6` :feature:`__set_name__`  `PEP 487 - Descriptor Protocol Enhancements <https://www.python.org/dev/peps/pep-0487>`_
+
 class Descriptor:
 
     def __init__(self, name, value):
@@ -230,6 +232,7 @@ class Descriptor:
     def __delete__(self, instance):
         print_method(self, '__delete__', self, instance)
 
+    # since 3.6
     def __set_name__(self, owner, name):
         print_method(self, '__set_name__', self, owner, name)
 
@@ -291,7 +294,9 @@ class Property:
 #!# Customising Class Creation
 #!# --------------------------
 #!#
-#!# `PEP 487: Simpler customization of class creation <https://www.python.org/dev/peps/pep-0487>`_
+#!# :frompy:`3.6`
+#!#
+#!# `PEP 487 - Simpler customization of class creation <https://www.python.org/dev/peps/pep-0487>`_
 
 #h# print_rule()
 
@@ -386,9 +391,30 @@ obj = SubMetaclassed(1, 2, attr1='abc')
 #!#
 #!# Customising Instance and Subclass Checks
 #!# ----------------------------------------
+#!#
+#!# `PEP 3119 - Introducing Abstract Base Classes <https://www.python.org/dev/peps/pep-3119>`_
 
-# class.__instancecheck__(self, instance)
-# class.__subclasscheck__(self, subclass)
+class CheckableMetaclass(type):
+
+    def __instancecheck__(self, instance):
+        print_method(self, '__init_subclass__', self, instance)
+        return super().__instancecheck__(instance)
+
+    def __subclasscheck__(self, subclass):
+        print_method(self, '__subclasscheck__', self, subclass)
+        return super().__subclasscheck__(subclass)
+
+class CheckableClass(metaclass=CheckableMetaclass):
+    pass
+
+class SubCheckableClass(CheckableClass):
+    pass
+
+subobj = SubCheckableClass()
+print(isinstance(subobj, CheckableClass))
+print(isinstance(subobj, SubCheckableClass))
+print(issubclass(subobj.__class__, CheckableClass))
+#o#
 
 ####################################################################################################
 #!#

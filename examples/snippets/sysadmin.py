@@ -3,6 +3,11 @@
 #!# =======================
 #!#
 #!# This page contains snippets for system administration tasks.
+#!#
+#!# See also
+#!#
+#!# * https://docs.python.org/3/library/pathlib.html
+#!#
 
 ####################################################################################################
 
@@ -148,10 +153,18 @@ with TemporaryFileHierarchy() as tmp_directory:
             print(os.path.join(path, filename))
 #o#
 
+#!# PEP 471 – os.scandir() function – a better and faster directory iterator
+
+with TemporaryFileHierarchy() as tmp_directory:
+
+    for entry in os.scandir(tmp_directory):
+        print(entry, entry.is_file(), entry.name)
+#o#
+
 ####################################################################################################
 
 #!#
-#!# Pattern Matching/Substitution (grep, sed)
+#!# pattern Matching/Substitution (grep, sed)
 #!# -----------------------------------------
 
 #!# This snippet replaces the *grep* and *sed* commands:
@@ -202,8 +215,10 @@ Hello John,
 It's a beautiful day!
 Cheers,
 '''
+
 with TemporaryFileHierarchy(file1=file1_content, chdir=True) as tmp_directory:
 
+    # subprocess.call
     rc = subprocess.call(('grep', '-i', 'john', 'file1'))
     print('grep john:', rc == 0)
 
@@ -211,12 +226,14 @@ with TemporaryFileHierarchy(file1=file1_content, chdir=True) as tmp_directory:
     print('grep paul:', rc == 0)
 
     try:
+        # subprocess.check_call
         subprocess.check_call(('grep', '-i', 'john', 'file1'))
         print('will fail')
         subprocess.check_call(('grep', '-i', 'paul', 'file1'))
     except subprocess.CalledProcessError:
         print('grep failed')
 
+    # subprocess.check_output
     output = subprocess.check_output(('cat', 'file1'))
     print(output.decode('utf-8'))
 #o#
