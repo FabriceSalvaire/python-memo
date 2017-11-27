@@ -29,14 +29,41 @@ p {
     font-size: 100%; /* 16 px */
 }
 
+div[class^="highlight"] {
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
 div[class^="highlight"] pre {
     font-size: 100%; /* 16 px */
 }
 
+div.highlight-pytb {
+    background: #ffcfcf;
+    border-left-width: 10px;
+    border-left-color: #fc4545;
+    border-left-style: solid;
+}
 
-.btn {
-    border-radius: 10px; /* 2px */
+
+div.highlight-none {
+    background: #d2ffcf;
+    border-left-width: 10px;
+    border-left-color: #1ada52;
+    border-left-style: solid;
+}
+
+a.btn.btn-neutral {
     box-shadow: none;
+    border: 0;
+    border-radius: 0;
+    background: #4caf50 !important;
+    color: white !important;
+}
+
+a.btn.btn-neutral:hover {
+    background: #6ec071 !important;
+    color: white !important;
 }
 
 /* ----------------------------------------------------------------------------------------------- */
@@ -53,161 +80,45 @@ dl.class, dl.function {
  */
 
 div.getthecode {
-  border-radius: 3px;
-  padding-top: 1em;
-  padding-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 div.getthecode-header {
-  padding: 5px;
-  margin-bottom: 0px;
-  border-bottom: 1px solid rgb(216, 216, 216);
-  background-repeat: repeat-x;
-  background-color: rgb(234, 234, 234);
-  background-image: linear-gradient(rgb(250, 250, 250), rgb(234, 234, 234));
-}
-
-div.getthecode-header span {
+    padding: 5px;
+    border-radius: 4px;
+    background: #2980b9;
+    color: white;
+    /* background: #52cc79; */
+    /* background: #4fa6e6; */
+    /* color: black; */
 }
 
 div.getthecode-header a {
-  margin-left: .5em;
-  display: inline-block;
-  background-image: url("../file-text-small.png");
-  background-repeat: no-repeat;
-  width: 16px;
-  height: 16px;
-  /* text-indent :-9999px; */ /* hide text */
+    /* color: black; */
+    color: white;
 }
 
-div.getthecode-header a span {
-  display: none;
+.rst-content div.getthecode-header ul {
+    margin: 0; /* Reset */
+    list-style-type: none;
+}
+.rst-content div.getthecode-header ul li {
+    margin: 0; /* Reset */
+    margin-left: 1em;
+    display: inline;
+}
+
+div.getthecode-header li.getthecode-filename-link span {
+    display: none;
+}
+
+.rst-content div.getthecode-header li.show-code-button {
+    cursor: pointer;
+    float: right;
+    margin-right: 1em;
 }
 
 div.getthecode pre {
-  margin-top: 0px;
-  padding: 3px;
-}
-
-div.highlight-default {
-    background: #f0fbe8;
-}
-
-/* ----------------------------------------------------------------------------------------------- *
- *
- * Proposal
- *
- */
-
-.rst-content .highlight > pre {
-    line-height: 2.5ex; /* normal */
-}
-
-span.highlighted-feature {
-    background: #d4d2f9;
-    padding-left: 1ex;
-    padding-right: 1ex;
-    border-radius: 5px;
-}
-
-span.code-ref {
-    background: #2f2c2c;
-    color: white;
-    padding-left: 1ex;
-    padding-right: 1ex;
-    border-radius: 5px;
-}
-
-/*
-.wy-plain-list-disc li, .rst-content .section ul li, .rst-content .toctree-wrapper ul li, article ul li {
-    list-style: disc;
-    margin-left: 24px;
-}
-*/
-
-.rst-content .section ul.reference-doc-banner {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  overflow: hidden;
-  width: 100%;
-
-  margin-bottom: 2ex;
-}
-
-.rst-content .section ul.reference-doc-banner li {
-  padding: 0;
-  list-style: none;
-
-  float: left;
-  margin: 0 .5em 0 1em;
-}
-
-.reference-doc-banner a,
-.reference-doc-banner span {
-  background: #ddd;
-  padding: .7em 1em;
-  float: left;
-  text-decoration: none;
-  color: #444;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  position: relative;
-}
-
-.reference-doc-banner a:hover {
-  background: #efc9ab;
-}
-
-.reference-doc-banner a::before,
-.reference-doc-banner a::after,
-.reference-doc-banner span::before,
-.reference-doc-banner span::after {
-  content:'';
-  position:absolute;
-  top: 0;
-  bottom: 0;
-  width: 1em;
-  background: #ddd;
-  transform: skew(-10deg);
-}
-
-.reference-doc-banner a::before,
-.reference-doc-banner span::before {
-  left: -.5em;
-  border-radius: 5px 0 0 5px;
-}
-
-.reference-doc-banner a:hover::before {
-  background: #efc9ab;
-}
-
-.reference-doc-banner a::after,
-.reference-doc-banner span::after {
-  right: -.5em;
-  border-radius: 0 5px 5px 0;
-}
-
-.reference-doc-banner a:hover::after {
-  background: #efc9ab;
-}
-
-.reference-doc-banner .current,
-.reference-doc-banner .current:hover {
-  font-weight: bold;
-  background: none;
-}
-
-.reference-doc-banner .current::after,
-.reference-doc-banner .current::before {
-  content: normal;
-}
-
-.reference-doc-banner span.python-version {
-    background: #dab7fb;
-}
-
-.reference-doc-banner span.python-version::before,
-.reference-doc-banner span.python-version::after {
-    background: #dab7fb;
+    margin-top: 0px;
+    padding: 12px;
 }
