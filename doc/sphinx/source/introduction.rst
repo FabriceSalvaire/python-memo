@@ -1,6 +1,6 @@
-.. _introduction:
-
 .. include:: css-tricks.txt
+
+.. _introduction:
 
 ==============
  Introduction
