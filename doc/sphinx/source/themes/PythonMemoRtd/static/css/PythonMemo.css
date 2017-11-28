@@ -122,3 +122,122 @@ div.getthecode pre {
     margin-top: 0px;
     padding: 12px;
 }
+
+/* ----------------------------------------------------------------------------------------------- *
+ *
+ * Proposal
+ *
+ */
+
+.rst-content .highlight > pre {
+    line-height: 2.5ex; /* normal */
+}
+
+span.highlighted-feature {
+    background: #d4d2f9;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    border-radius: 5px;
+}
+
+span.code-ref {
+    background: #2f2c2c;
+    color: white;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    border-radius: 5px;
+}
+
+/*
+.wy-plain-list-disc li, .rst-content .section ul li, .rst-content .toctree-wrapper ul li, article ul li {
+    list-style: disc;
+    margin-left: 24px;
+}
+*/
+
+.rst-content .section ul.reference-doc-banner {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  overflow: hidden;
+  width: 100%;
+
+  margin-bottom: 2ex;
+}
+
+.rst-content .section ul.reference-doc-banner li {
+  padding: 0;
+  list-style: none;
+
+  float: left;
+  margin: 0 .5em 0 1em;
+}
+
+.reference-doc-banner a,
+.reference-doc-banner span {
+  background: #ddd;
+  padding: .7em 1em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  position: relative;
+}
+
+.reference-doc-banner a:hover {
+  background: #efc9ab;
+}
+
+.reference-doc-banner a::before,
+.reference-doc-banner a::after,
+.reference-doc-banner span::before,
+.reference-doc-banner span::after {
+  content:'';
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  width: 1em;
+  background: #ddd;
+  transform: skew(-10deg);
+}
+
+.reference-doc-banner a::before,
+.reference-doc-banner span::before {
+  left: -.5em;
+  border-radius: 5px 0 0 5px;
+}
+
+.reference-doc-banner a:hover::before {
+  background: #efc9ab;
+}
+
+.reference-doc-banner a::after,
+.reference-doc-banner span::after {
+  right: -.5em;
+  border-radius: 0 5px 5px 0;
+}
+
+.reference-doc-banner a:hover::after {
+  background: #efc9ab;
+}
+
+.reference-doc-banner .current,
+.reference-doc-banner .current:hover {
+  font-weight: bold;
+  background: none;
+}
+
+.reference-doc-banner .current::after,
+.reference-doc-banner .current::before {
+  content: normal;
+}
+
+.reference-doc-banner span.python-version {
+    background: #dab7fb;
+}
+
+.reference-doc-banner span.python-version::before,
+.reference-doc-banner span.python-version::after {
+    background: #dab7fb;
+}
