@@ -108,6 +108,7 @@ How to get sources and fill issues
   introduction.rst
   python-news.rst
   examples/index.rst
+  restructured-text/index.rst
   key-packages.rst
   external-links.rst
   colophon.rst

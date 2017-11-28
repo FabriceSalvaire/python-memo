@@ -62,18 +62,20 @@ exec(compile(open(os.path.join(PythonMemo_path, 'setup_data.py')).read(), 'setup
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.doctest',
-              'sphinx.ext.intersphinx',
-              'sphinx.ext.todo',
-              'sphinx.ext.coverage',
-              # 'sphinx.ext.pngmath',
-              'sphinx.ext.mathjax',
-              'sphinx.ext.ifconfig',
-              'sphinx.ext.viewcode',
-              'sphinxcontrib.getthecode',
-              'sphinx_sitemap',
-              ]
+extensions = [
+    # 'sphinx.ext.pngmath',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.coverage',
+    'sphinx.ext.doctest',
+    'sphinx.ext.extlinks',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.todo',
+    'sphinx.ext.viewcode',
+    'sphinx_sitemap',
+    'sphinxcontrib.getthecode',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -294,11 +296,14 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 
 ####################################################################################################
 #
-# MathJax
+# External Links
 #
 
-# Don't work
-# mathjax_path = 'MathJax/MathJax.js'
+extlinks = {
+    'dudir':  ('http://docutils.sourceforge.net/docs/ref/rst/directives.html#%s', ''),
+    'duref':  ('http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html#%s', ''),
+    'durole': ('http://docutils.sourceforge.net/docs/ref/rst/roles.html#%s', ''),
+}
 
 ####################################################################################################
 #
@@ -307,3 +312,11 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 #
 
 site_url = 'https://python-memo.fabrice-salvaire.fr/' # could use setup_dict
+
+####################################################################################################
+#
+# MathJax
+#
+
+# Don't work
+# mathjax_path = 'MathJax/MathJax.js'

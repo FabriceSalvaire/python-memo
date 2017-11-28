@@ -1,0 +1,15 @@
+#! /usr/bin/bash
+
+rst_path='doc/sphinx/source/'
+
+echo
+echo Generate RST API files
+
+# Require docutils package in ressources/docutils
+pyterate-rst-api --rst-api-path ${rst_path}/restructured-text/api/docutils ressources/docutils
+
+echo
+echo Run Sphinx
+pushd doc/sphinx/
+./make-html #--clean
+popd
