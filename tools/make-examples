@@ -7,7 +7,7 @@ rm -rf ${examples}
 echo
 echo Generate RST examples files
 # generate-rst-examples --skip-external-figure --skip-figure
-PYTHONPATH=$PWD/examples/memo-tools:${PYTHONPATH} generate-rst-examples # --force
+PYTHONPATH=$PWD/examples/memo-tools:${PYTHONPATH} pyterate # --force
 
 echo
 echo Run Sphinx
