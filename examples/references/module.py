@@ -14,17 +14,14 @@
 
 #?# Fixme: autosphinx ???
 
-#!#
-#!# .. code-block:: python
-#!#
-#!#    import Foo
-#!#
-#!#    import Foo.Bar
-#!#    import Foo.Bar as bar
-#!#
-#!#    from Foo.Bar import bar
-#!#
-#!#    from . import Foo
-#!#    from .Foo import Bar
-#!#
-#!#    from ..Foo.Bar import *
+#l# import Foo
+#l#
+#l# import Foo.Bar
+#l# import Foo.Bar as bar
+#l#
+#l# from Foo.Bar import bar
+#l#
+#l# from . import Foo
+#l# from .Foo import Bar
+#l#
+#l# from ..Foo.Bar import *

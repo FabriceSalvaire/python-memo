@@ -29,21 +29,17 @@ async def func(param1, param2):
 #!# The async for statement
 #!# -----------------------
 
-#!# .. code-block:: py3
-#!#
-#!#     async for TARGET in ITER:
-#!#         # do something
-#!#         pass
-#!#     else:
-#!#         # else do something
-#!#         pass
+#l# async for TARGET in ITER:
+#l#     # do something
+#l#     pass
+#l# else:
+#l#     # else do something
+#l#     pass
 
 #!#
 #!# The async with statement
 #!# ------------------------
 
-#!# .. code-block:: py3
-#!#
-#!#     async with EXPR as VAR:
-#!#         # do something
-#!#         pass
+#l# async with EXPR as VAR:
+#l#     # do something
+#l#     pass

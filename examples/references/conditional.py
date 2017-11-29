@@ -6,18 +6,14 @@
 
 #!#
 #!# The syntax of a If statement is:
-#!#
-#!# .. code-block:: py3
-#!#
-#!#     if something_is_true:
-#!#         # do something
-#!#         pass
-#!#     else:
-#!#         # do something else
-#!#         pass
-#!#
+
+#l# if something_is_true:
+#l#     # do something
+#l#     pass
+#l# else:
+#l#     # do something else
+#l#     pass
+
 #!# Conditional expressions provides a shorter syntax:
-#!#
-#!# .. code-block:: py3
-#!#
-#!#     result = 'foo' if something_is_true else 'bar'
+
+#l# result = 'foo' if something_is_true else 'bar'
