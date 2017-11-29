@@ -18,12 +18,12 @@ from Tools import *
 #!#
 #!# `PEP 515 - Underscores in Numeric Literals <https://www.python.org/dev/peps/pep-0515>`_
 
-a_int = 1_000_000_000_000_000
-a_hex = 0x_FF_FF_FF_FF
-print(a_int, a_hex)
-#o#
+#<i#
+1_000_000_000_000_000
+0x_FF_FF_FF_FF
+#i>#
 
-a_int = '{:_}'.format(1000000)
-a_hex = '{:_x}'.format(0xFFFFFFFF)
-print(a_int, a_hex)
-#o#
+#<i#
+'{:_}'.format(1000000)
+'{:_x}'.format(0xFFFFFFFF)
+#i>#
