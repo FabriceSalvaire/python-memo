@@ -1,13 +1,13 @@
-#!# =======================
-#!#  System Administration
-#!# =======================
-#!#
-#!# This page contains snippets for system administration tasks.
-#!#
-#!# See also
-#!#
-#!# * https://docs.python.org/3/library/pathlib.html
-#!#
+#r# =======================
+#r#  System Administration
+#r# =======================
+#r#
+#r# This page contains snippets for system administration tasks.
+#r#
+#r# See also
+#r#
+#r# * https://docs.python.org/3/library/pathlib.html
+#r#
 
 ####################################################################################################
 
@@ -20,14 +20,14 @@ from Tools import *
 
 ####################################################################################################
 
-#!# Note: Temporary file and directory are addressed first so as to define a temporary file hierarchy
-#!# context manager used afterwards in this page.
+#r# Note: Temporary file and directory are addressed first so as to define a temporary file hierarchy
+#r# context manager used afterwards in this page.
 
-#!#
-#!# Temporary File and Directory
-#!# ----------------------------
-#!#
-#!# Reference: https://docs.python.org/3/library/tempfile.html
+#r#
+#r# Temporary File and Directory
+#r# ----------------------------
+#r#
+#r# Reference: https://docs.python.org/3/library/tempfile.html
 
 with tempfile.TemporaryFile() as fh:
     fh.write(b'Hello world!')
@@ -39,7 +39,7 @@ with tempfile.TemporaryDirectory() as tmp_directory:
     print('Created temporary directory', tmp_directory)
 #o#
 
-#!# Create a filesystem hierarchy
+#r# Create a filesystem hierarchy
 
 with tempfile.TemporaryDirectory() as tmp_directory:
     print('Created temporary directory', tmp_directory)
@@ -52,7 +52,7 @@ with tempfile.TemporaryDirectory() as tmp_directory:
             with open(path, 'w') as fh:
                 fh.write('...')
 
-#!# Using a context manager
+#r# Using a context manager
 
 class TemporaryFileHierarchy:
 
@@ -86,11 +86,11 @@ class TemporaryFileHierarchy:
 
 ####################################################################################################
 
-#!#
-#!# Filesystem Snippets
-#!# -------------------
-#!#
-#!# Reference: https://docs.python.org/3/library/os.path.html#module-os.path
+#r#
+#r# Filesystem Snippets
+#r# -------------------
+#r#
+#r# Reference: https://docs.python.org/3/library/os.path.html#module-os.path
 
 with TemporaryFileHierarchy() as tmp_directory:
 
@@ -118,11 +118,11 @@ with TemporaryFileHierarchy() as tmp_directory:
 
 ####################################################################################################
 
-#!#
-#!# File Permission
-#!# ---------------
-#!#
-#!# Reference: https://docs.python.org/3/library/os.html
+#r#
+#r# File Permission
+#r# ---------------
+#r#
+#r# Reference: https://docs.python.org/3/library/os.html
 
 with TemporaryFileHierarchy(chdir=True) as tmp_directory:
 
@@ -137,13 +137,13 @@ with TemporaryFileHierarchy(chdir=True) as tmp_directory:
 
 ####################################################################################################
 
-#!#
-#!# Walk recursively on the filesystem (find)
-#!# -----------------------------------------
+#r#
+#r# Walk recursively on the filesystem (find)
+#r# -----------------------------------------
 
-#!# This snippet replaces the *find* command:
-#!#
-#!# Reference: https://docs.python.org/3/library/os.html#os.walk
+#r# This snippet replaces the *find* command:
+#r#
+#r# Reference: https://docs.python.org/3/library/os.html#os.walk
 
 with TemporaryFileHierarchy() as tmp_directory:
 
@@ -153,7 +153,7 @@ with TemporaryFileHierarchy() as tmp_directory:
             print(os.path.join(path, filename))
 #o#
 
-#!# PEP 471 – os.scandir() function – a better and faster directory iterator
+#r# PEP 471 – os.scandir() function – a better and faster directory iterator
 
 with TemporaryFileHierarchy() as tmp_directory:
 
@@ -163,11 +163,11 @@ with TemporaryFileHierarchy() as tmp_directory:
 
 ####################################################################################################
 
-#!#
-#!# pattern Matching/Substitution (grep, sed)
-#!# -----------------------------------------
+#r#
+#r# pattern Matching/Substitution (grep, sed)
+#r# -----------------------------------------
 
-#!# This snippet replaces the *grep* and *sed* commands:
+#r# This snippet replaces the *grep* and *sed* commands:
 
 file1_content = '''
 Hello John,
@@ -203,12 +203,12 @@ with TemporaryFileHierarchy(file1=file1_content) as tmp_directory:
 
 ####################################################################################################
 
-#!#
-#!# Execute subprocesses
-#!# --------------------
+#r#
+#r# Execute subprocesses
+#r# --------------------
 
-#!#
-#!# Reference: https://docs.python.org/3/library/subprocess.html
+#r#
+#r# Reference: https://docs.python.org/3/library/subprocess.html
 
 file1_content = '''
 Hello John,

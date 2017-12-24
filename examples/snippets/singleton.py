@@ -1,13 +1,13 @@
-#!# ============
-#!#  Singletons
-#!# ============
-#!#
-#!# This page contains several singleton implementations.
+#r# ============
+#r#  Singletons
+#r# ============
+#r#
+#r# This page contains several singleton implementations.
 
 ####################################################################################################
 
-#!# This implementation, based on metaclass, supports subclassing and is thread safe. Best
-#!# implementation if we need subclassing.
+#r# This implementation, based on metaclass, supports subclassing and is thread safe. Best
+#r# implementation if we need subclassing.
 
 class SingletonMetaclass(type):
 
@@ -46,8 +46,8 @@ class SingletonMetaclass(type):
 
 ####################################################################################################
 
-#!# This implementation, based on decorator and a class wrapper, doesn't support subclassing.  With
-#!# a decorator, each class and its subclasses must be decorated in order to be a singleton.
+#r# This implementation, based on decorator and a class wrapper, doesn't support subclassing.  With
+#r# a decorator, each class and its subclasses must be decorated in order to be a singleton.
 
 class singleton:
 
@@ -75,7 +75,7 @@ class singleton:
 
 ####################################################################################################
 
-#!# Another implementation based on decorator but using a closure to wrap the class:
+#r# Another implementation based on decorator but using a closure to wrap the class:
 
 def singleton(cls):
 

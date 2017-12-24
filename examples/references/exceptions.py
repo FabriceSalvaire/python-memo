@@ -1,15 +1,15 @@
-#!# ============
-#!#  Exceptions
-#!# ============
-#!#
-#!# This page contains a memo on exceptions.
-#!#
-#!# For a complete reference documentation, look at https://docs.python.org/3/reference/compound_stmts.html#try
+#r# ============
+#r#  Exceptions
+#r# ============
+#r#
+#r# This page contains a memo on exceptions.
+#r#
+#r# For a complete reference documentation, look at https://docs.python.org/3/reference/compound_stmts.html#try
 
 from Tools import *
 
-#!#
-#!# Catch exceptions using :code:`try` block:
+#r#
+#r# Catch exceptions using :code:`try` block:
 
 try:
     x = 1 / 0
@@ -26,8 +26,8 @@ except:
     pass # simply ignore the exception
 #o#
 
-#!#
-#!# Use :code:`finally` to do cleanup:
+#r#
+#r# Use :code:`finally` to do cleanup:
 
 try:
     x = 1 / 1
@@ -37,8 +37,8 @@ finally:
     print('try block succeed')
 #o#
 
-#!#
-#!# Raise exceptions:
+#r#
+#r# Raise exceptions:
 
 try:
     raise NameError("Something bad happened")
@@ -55,8 +55,8 @@ except Exception as exception:
     print(exception)
 #o#
 
-#!#
-#!# Chain exceptions:
+#r#
+#r# Chain exceptions:
 
 try:
     try:
@@ -67,4 +67,4 @@ except Exception as exception:
     print(exception, ', caused by:', exception.__cause__)
 #o#
 
-#!# **To be completed:** :code:`exception.__context__`
+#r# **To be completed:** :code:`exception.__context__`

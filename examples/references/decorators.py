@@ -1,19 +1,19 @@
-#!# ============
-#!#  Decorators
-#!# ============
-#!#
-#!# This page contains a memo on decorators.
+#r# ============
+#r#  Decorators
+#r# ============
+#r#
+#r# This page contains a memo on decorators.
 
 ####################################################################################################
 
 from Tools import *
 
 ####################################################################################################
-#!#
-#!# Function Decorators
-#!# -------------------
-#!#
-#!# `PEP 318 -- Decorators for Functions and Methods <https://www.python.org/dev/peps/pep-0318>`_
+#r#
+#r# Function Decorators
+#r# -------------------
+#r#
+#r# `PEP 318 -- Decorators for Functions and Methods <https://www.python.org/dev/peps/pep-0318>`_
 
 def func_decorator_1(func):
     print_function('func_decorator_1', func)
@@ -50,11 +50,11 @@ def foo():
 #o#
 
 ####################################################################################################
-#!#
-#!# Class Decorators
-#!# ----------------
-#!#
-#!# `PEP 3129 -- Class Decorators <https://www.python.org/dev/peps/pep-3129>`_
+#r#
+#r# Class Decorators
+#r# ----------------
+#r#
+#r# `PEP 3129 -- Class Decorators <https://www.python.org/dev/peps/pep-3129>`_
 
 def class_decorator_1(cls):
     print_function('class_decorator_1', cls)

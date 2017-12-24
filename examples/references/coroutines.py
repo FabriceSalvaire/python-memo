@@ -1,12 +1,12 @@
-#!# ============
-#!#  Coroutines
-#!# ============
-#!#
-#!# This page contains a memo on coroutines.
-#!#
-#!# For a complete reference documentation, look at
-#!# https://docs.python.org/3/reference/compound_stmts.html#coroutines and `PEP 492 -- Coroutines
-#!# with async and await syntax <https://www.python.org/dev/peps/pep-0492>`_.
+#r# ============
+#r#  Coroutines
+#r# ============
+#r#
+#r# This page contains a memo on coroutines.
+#r#
+#r# For a complete reference documentation, look at
+#r# https://docs.python.org/3/reference/compound_stmts.html#coroutines and `PEP 492 -- Coroutines
+#r# with async and await syntax <https://www.python.org/dev/peps/pep-0492>`_.
 
 ####################################################################################################
 
@@ -14,20 +14,20 @@ from Tools import *
 
 ####################################################################################################
 
-#!#
-#!# **To be completed**
+#r#
+#r# **To be completed**
 
-#!#
-#!# Coroutine function definition
-#!# -----------------------------
+#r#
+#r# Coroutine function definition
+#r# -----------------------------
 
 async def func(param1, param2):
     do_stuff()
     await some_coroutine()
 
-#!#
-#!# The async for statement
-#!# -----------------------
+#r#
+#r# The async for statement
+#r# -----------------------
 
 #l# async for TARGET in ITER:
 #l#     # do something
@@ -36,9 +36,9 @@ async def func(param1, param2):
 #l#     # else do something
 #l#     pass
 
-#!#
-#!# The async with statement
-#!# ------------------------
+#r#
+#r# The async with statement
+#r# ------------------------
 
 #l# async with EXPR as VAR:
 #l#     # do something

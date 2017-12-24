@@ -1,12 +1,12 @@
-#!# =======
-#!#  Loops
-#!# =======
-#!#
-#!# This page contains a memo on loop statements.
+#r# =======
+#r#  Loops
+#r# =======
+#r#
+#r# This page contains a memo on loop statements.
 
-#!#
-#!# For Loop
-#!# --------
+#r#
+#r# For Loop
+#r# --------
 
 for i in range(5):
     print(i)
@@ -31,9 +31,9 @@ else:
 #o#
 
 
-#!#
-#!# While Loop
-#!# ----------
+#r#
+#r# While Loop
+#r# ----------
 
 i = 0
 while i < 5:

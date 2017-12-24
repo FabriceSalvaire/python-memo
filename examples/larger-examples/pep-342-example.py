@@ -1,20 +1,20 @@
-#!# =======================================================
-#!#  PEP 342 -- Coroutines via Enhanced Generators Example
-#!# =======================================================
+#r# =======================================================
+#r#  PEP 342 -- Coroutines via Enhanced Generators Example
+#r# =======================================================
 
-#!#
-#!# This article provides a full Python 3 example illustrating the use of coroutines via enhanced
-#!# generators as described in the `PEP 342 document <https://www.python.org/dev/peps/pep-0342>`_.
-#!#
-#!# The PEP 342 proposes some enhancements to the API and syntax of generators, to make them usable
-#!# as simple coroutines. This PEP proposal was implemented in Python 2.5. The code given as example
-#!# in this document is not working as is. You will find here two real implementations of the PEP
-#!# 342's example for Python 3, the first one is implemented without coroutines to serve as
-#!# reference and the second one makes use of coroutines. This example implements a thumbnail pager.
+#r#
+#r# This article provides a full Python 3 example illustrating the use of coroutines via enhanced
+#r# generators as described in the `PEP 342 document <https://www.python.org/dev/peps/pep-0342>`_.
+#r#
+#r# The PEP 342 proposes some enhancements to the API and syntax of generators, to make them usable
+#r# as simple coroutines. This PEP proposal was implemented in Python 2.5. The code given as example
+#r# in this document is not working as is. You will find here two real implementations of the PEP
+#r# 342's example for Python 3, the first one is implemented without coroutines to serve as
+#r# reference and the second one makes use of coroutines. This example implements a thumbnail pager.
 
-#!#
-#!# Common parts
-#!# ------------
+#r#
+#r# Common parts
+#r# ------------
 
 ####################################################################################################
 
@@ -23,7 +23,7 @@ import tempfile
 
 ####################################################################################################
 
-#!# We define two classes:
+#r# We define two classes:
 
 class PageSize:
 
@@ -76,7 +76,7 @@ class Image:
 
 ####################################################################################################
 
-#!# And a function to run the example:
+#r# And a function to run the example:
 
 def write_thumbnails(thumbnail_pager, jpeg_writer, page_size, thumb_size, images, output_dir):
     pipeline = thumbnail_pager(page_size, thumb_size, jpeg_writer(output_dir))
@@ -96,9 +96,9 @@ def run_exemple(thumbnail_pager, jpeg_writer):
             images=[Image("image{}".format(i), None) for i in range(10)],
             output_dir=output_dir)
 
-#!#
-#!# Basic Implementation
-#!# --------------------
+#r#
+#r# Basic Implementation
+#r# --------------------
 
 ####################################################################################################
 
@@ -164,8 +164,8 @@ run_exemple(ThumbnailPager, JpegWriter)
 
 ####################################################################################################
 
-#!# Implementation using coroutines
-#!# -------------------------------
+#r# Implementation using coroutines
+#r# -------------------------------
 
 ####################################################################################################
 

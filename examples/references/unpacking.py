@@ -1,10 +1,10 @@
-#!# ===========
-#!#  Unpacking
-#!# ===========
-#!#
-#!# This page contains a memo on unpacking.
+#r# ===========
+#r#  Unpacking
+#r# ===========
+#r#
+#r# This page contains a memo on unpacking.
 
-#!# `PEP 448 - Additional Unpacking Generalizations <https://www.python.org/dev/peps/pep-0448>`_
+#r# `PEP 448 - Additional Unpacking Generalizations <https://www.python.org/dev/peps/pep-0448>`_
 
 _= *[1], *[2], 3, *[4, 5]
 print(_)

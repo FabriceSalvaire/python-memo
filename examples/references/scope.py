@@ -1,8 +1,8 @@
-#!# =======
-#!#  Scope
-#!# =======
-#!#
-#!# This page contains a memo on scope.
+#r# =======
+#r#  Scope
+#r# =======
+#r#
+#r# This page contains a memo on scope.
 
 ####################################################################################################
 
@@ -10,32 +10,31 @@ from Tools import *
 
 ####################################################################################################
 
-#!# Upper scope
-#!# -----------
+#r# Upper scope
+#r# -----------
 
-#!# Attributes are local to the "__main__" Python file or a module
+#r# Attributes are local to the "__main__" Python file or a module
 
 a_global = 1 # in fact local to upper scope
 print(a_global)
 #o#
 
-#!# _ prefixed attributes are privates by convention
+#r# _ prefixed attributes are privates by convention
 _a_private_global = 2
 
-#!# Module Scope
-#!# ~~~~~~~~~~~~
+#r# Module Scope
+#r# ~~~~~~~~~~~~
 
 #?# Fixme: #i# don't work
 
-#!# Let a module :file:`ModuleA/__init__.py`
+#r# Let a module :file:`ModuleA/__init__.py`
 
-#itxt# ModuleA/__init__.py
-
+#f# getthecode('ModuleA/__init__.py')
 import ModuleA
 #o#
 
-#!# Loops
-#!# ~~~~~
+#r# Loops
+#r# ~~~~~
 
 for i in range(10):
     # i is local to the upper scope
@@ -45,8 +44,8 @@ print('i' in globals())
 print('last i is', i)
 #o#
 
-#!# With statement
-#!# ~~~~~~~~~~~~~~
+#r# With statement
+#r# ~~~~~~~~~~~~~~
 
 with open(__file__) as fh:
     # fh is local to the upper scope
@@ -54,14 +53,14 @@ with open(__file__) as fh:
 print(type(fh))
 #o#
 
-#!# Test for main
-#!# -------------
+#r# Test for main
+#r# -------------
 
 if __name__ == '__main__':
     print('This file is main')
 
-#!# Function scope
-#!# --------------
+#r# Function scope
+#r# --------------
 
 another_global = 1
 
@@ -104,12 +103,12 @@ def outside():
 outside()
 #o#
 
-#!# We can attach attributes to function
+#r# We can attach attributes to function
 
 foo.attribute = 1
 
-#!# Class scope
-#!# -----------
+#r# Class scope
+#r# -----------
 
 class Foo:
 
@@ -136,7 +135,7 @@ class Foo:
         print_method(self, 'method')
         self.__method() # call Foo__foo_attribute
 
-#!# We can complete class later
+#r# We can complete class later
 
 Foo.attribute = 2
 

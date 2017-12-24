@@ -1,11 +1,11 @@
-#!# ============
-#!#  Generators
-#!# ============
-#!#
-#!# This page contains a memo on generators.
-#!#
-#!# For a complete reference documentation, look at
-#!# https://docs.python.org/3/reference/expressions.html#generator-expressions
+#r# ============
+#r#  Generators
+#r# ============
+#r#
+#r# This page contains a memo on generators.
+#r#
+#r# For a complete reference documentation, look at
+#r# https://docs.python.org/3/reference/expressions.html#generator-expressions
 
 ####################################################################################################
 
@@ -15,8 +15,8 @@ import asyncio
 
 ####################################################################################################
 
-#!# List Comprehensions
-#!# -------------------
+#r# List Comprehensions
+#r# -------------------
 
 a_list = [x for x in range(10)]
 print(a_list)
@@ -30,8 +30,8 @@ a_dict = {x:x for x in range(5)}
 print(a_dict)
 #o#
 
-#!# Nested List Comprehensions
-#!# ~~~~~~~~~~~~~~~~~~~~~~~~~~
+#r# Nested List Comprehensions
+#r# ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 a_list_of_list = [[x, y]
                   for x in range(2)
@@ -39,8 +39,8 @@ a_list_of_list = [[x, y]
 print(a_list_of_list)
 #o#
 
-#!# Filtered List Comprehensions
-#!# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#r# Filtered List Comprehensions
+#r# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 a_list = [x for x in range(10)
           if 2 <= x <= 6]
@@ -56,8 +56,8 @@ print(a_list_of_list)
 
 ####################################################################################################
 
-#!# Generator expressions
-#!# ---------------------
+#r# Generator expressions
+#r# ---------------------
 
 N = 4
 multiplication_table = (x*y for x in range(1, N+1) for y in range(1, N+1))
@@ -65,8 +65,8 @@ multiplication_table = (x*y for x in range(1, N+1) for y in range(1, N+1))
 print(list(multiplication_table))
 #o#
 
-#!# Yield expressions
-#!# -----------------
+#r# Yield expressions
+#r# -----------------
 
 def simplist_generator():
     yield 1
@@ -81,7 +81,7 @@ def range_clone(N):
 print(list(range_clone(10)))
 #o#
 
-#!# A generator exit when :code:`StopIteration` is raised:
+#r# A generator exit when :code:`StopIteration` is raised:
 
 def generator(N, M):
     value = N
@@ -94,7 +94,7 @@ def generator(N, M):
 print(list(generator(10, 20)))
 #o#
 
-#!# We can yield from a generator instead of a value:
+#r# We can yield from a generator instead of a value:
 
 def generator(N):
     yield from range_clone(N)
@@ -102,8 +102,8 @@ def generator(N):
 print(list(generator(10)))
 #o#
 
-#!# Generator-iterator Methods
-#!# --------------------------
+#r# Generator-iterator Methods
+#r# --------------------------
 
 def echo(value=None):
     print("echo is running")
@@ -121,7 +121,7 @@ def echo(value=None):
 generator = echo(1)
 #o#
 
-#!# Starts the execution of a generator function or resumes it at the last executed yield expression.
+#r# Starts the execution of a generator function or resumes it at the last executed yield expression.
 
 print(next(generator))
 #o#
@@ -129,28 +129,28 @@ print(next(generator))
 print(next(generator))
 #o#
 
-#!# Resumes the execution and “sends” a value into the generator function.
+#r# Resumes the execution and “sends” a value into the generator function.
 
 print(generator.send(2))
 #o#
 
-#!# Raises an exception of type type at the point where the generator was paused.
+#r# Raises an exception of type type at the point where the generator was paused.
 
 # generator.throw(type[, value[, traceback]])
 generator.throw(TypeError, "spam")
 #o#
 
-#!# Raises a :code:`GeneratorExit` at the point where the generator function was paused.
+#r# Raises a :code:`GeneratorExit` at the point where the generator function was paused.
 
 generator.close()
 #o#
 
-#!# Asynchronous Generator Functions
-#!# --------------------------------
+#r# Asynchronous Generator Functions
+#r# --------------------------------
 
-#!# **To be completed**
-#!#
-#!# For further information see `PEP 525 -- Asynchronous Generators <https://www.python.org/dev/peps/pep-0525>`_
+#r# **To be completed**
+#r#
+#r# For further information see `PEP 525 -- Asynchronous Generators <https://www.python.org/dev/peps/pep-0525>`_
 
 async def ticker(delay, to):
     """Yield numbers from 0 to `to` every `delay` seconds."""
@@ -158,7 +158,7 @@ async def ticker(delay, to):
         yield i
         await asyncio.sleep(delay)
 
-#!# Asynchronous Generator-Iterator Methods
-#!# ---------------------------------------
+#r# Asynchronous Generator-Iterator Methods
+#r# ---------------------------------------
 
-#!# **To be completed**
+#r# **To be completed**

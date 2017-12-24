@@ -1,11 +1,11 @@
-#!# =========================
-#!#  Conditional Expressions
-#!# =========================
-#!#
-#!# This page contains a memo on conditional expressions.
+#r# =========================
+#r#  Conditional Expressions
+#r# =========================
+#r#
+#r# This page contains a memo on conditional expressions.
 
-#!#
-#!# The syntax of a If statement is:
+#r#
+#r# The syntax of a If statement is:
 
 #l# if something_is_true:
 #l#     # do something
@@ -14,6 +14,6 @@
 #l#     # do something else
 #l#     pass
 
-#!# Conditional expressions provides a shorter syntax:
+#r# Conditional expressions provides a shorter syntax:
 
 #l# result = 'foo' if something_is_true else 'bar'

@@ -1,8 +1,8 @@
-#!# =============
-#!#  Comparisons
-#!# =============
-#!#
-#!# This page contains a memo on comparisons.
+#r# =============
+#r#  Comparisons
+#r# =============
+#r#
+#r# This page contains a memo on comparisons.
 
 ####################################################################################################
 
@@ -10,16 +10,16 @@ from Tools import *
 
 ####################################################################################################
 
-#!# Let define some strings
+#r# Let define some strings
 
 s0 = 'abc'
 s1 = 'def'
 
-#!# Let define a reference or alias to :code:`s0`
+#r# Let define a reference or alias to :code:`s0`
 
 s2 = s0
 
-#!# :code:`s0` and :code:`s2` have the same *id*, address of the object in memory.
+#r# :code:`s0` and :code:`s2` have the same *id*, address of the object in memory.
 
 pretty_print([id(x) for x in (s0, s2, s1)])
 #o#
@@ -27,8 +27,8 @@ pretty_print([id(x) for x in (s0, s2, s1)])
 print(id(s0) == id(s2))
 #o#
 
-#!# Equality Test
-#!# -------------
+#r# Equality Test
+#r# -------------
 
 print(s0 != s1)
 #o#
@@ -36,8 +36,8 @@ print(s0 != s1)
 print(s0 == s2)
 #o#
 
-#!# Reference Test
-#!# --------------
+#r# Reference Test
+#r# --------------
 
 print(s0 is not s1)
 #o#
@@ -45,13 +45,13 @@ print(s0 is not s1)
 print(s0 is s2)
 #o#
 
-#!# Comparison Tests
-#!# ----------------
+#r# Comparison Tests
+#r# ----------------
 
 x = 2
 print(0 <= x < 10)
 #o#
 
-#!# shorter than
+#r# shorter than
 
 0 <= x and x < 10

@@ -1,8 +1,8 @@
-#!# =========
-#!#  Strings
-#!# =========
-#!#
-#!# This page contains a memo on strings.
+#r# =========
+#r#  Strings
+#r# =========
+#r#
+#r# This page contains a memo on strings.
 
 ####################################################################################################
 
@@ -12,13 +12,13 @@ from Tools import *
 
 ####################################################################################################
 
-#!#
-#!# Formatted string literals
-#!# -------------------------
-#!#
-#!# :frompy:`3.6`
-#!#
-#!# `PEP 498 - Formatted string literals <https://www.python.org/dev/peps/pep-0498>`_
+#r#
+#r# Formatted string literals
+#r# -------------------------
+#r#
+#r# :frompy:`3.6`
+#r#
+#r# `PEP 498 - Formatted string literals <https://www.python.org/dev/peps/pep-0498>`_
 
 name = "Fred"
 print(f"He said his name is {name}.")

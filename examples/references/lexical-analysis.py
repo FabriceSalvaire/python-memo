@@ -1,43 +1,43 @@
-#!# ==================
-#!#  Lexical Analysis
-#!# ==================
-#!#
-#!# This page contains a memo on lexical analysis.
-#!#
-#!# For a complete reference documentation, look at https://docs.python.org/3.6/reference/lexical_analysis.html
+#r# ==================
+#r#  Lexical Analysis
+#r# ==================
+#r#
+#r# This page contains a memo on lexical analysis.
+#r#
+#r# For a complete reference documentation, look at https://docs.python.org/3.6/reference/lexical_analysis.html
 
-#!#
-#!# Python Keywords
-#!# ---------------
-#!#
-#!# .. code-block:: py3
-#!#
-#!#     False      class      finally    is         return
-#!#     None       continue   for        lambda     try
-#!#     True       def        from       nonlocal   while
-#!#     and        del        global     not        with
-#!#     as         elif       if         or         yield
-#!#     assert     else       import     pass
-#!#     break      except     in         raise
+#r#
+#r# Python Keywords
+#r# ---------------
+#r#
+#r# .. code-block:: py3
+#r#
+#r#     False      class      finally    is         return
+#r#     None       continue   for        lambda     try
+#r#     True       def        from       nonlocal   while
+#r#     and        del        global     not        with
+#r#     as         elif       if         or         yield
+#r#     assert     else       import     pass
+#r#     break      except     in         raise
 
-#!#
-#!# Reserved classes of identifiers
-#!# -------------------------------
-#!#
-#!# :code:`_*`
-#!#     Not imported by from module import *
-#!# :code:`__*__`
-#!#     System-defined names
-#!# :code:`__*`
-#!#     Class-private names
-#!#
-#!# Usually, :code:`_` is assigned to last evaluation or used in conjunction with *gettext* for internationalization.
+#r#
+#r# Reserved classes of identifiers
+#r# -------------------------------
+#r#
+#r# :code:`_*`
+#r#     Not imported by from module import *
+#r# :code:`__*__`
+#r#     System-defined names
+#r# :code:`__*`
+#r#     Class-private names
+#r#
+#r# Usually, :code:`_` is assigned to last evaluation or used in conjunction with *gettext* for internationalization.
 
-#!#
-#!# Indentation
-#!# -----------
+#r#
+#r# Indentation
+#r# -----------
 
-#!# Using continuation, backslash character "\\":
+#r# Using continuation, backslash character "\\":
 
 def check_date(year, month, day, hour, minute, second):
     if 1900 < year < 2100 and 1 <= month <= 12 \
@@ -45,7 +45,7 @@ def check_date(year, month, day, hour, minute, second):
        and 0 <= minute < 60 and 0 <= second < 60:
         return True
 
-#!# Better, using parenthesis, brace and bracket:
+#r# Better, using parenthesis, brace and bracket:
 
 def check_date(year, month, day, hour, minute, second):
     if (1900 < year < 2100 and 1 <= month <= 12

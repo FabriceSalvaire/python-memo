@@ -1,15 +1,15 @@
 # Fixme: double title
 
-#!# ======
-#!#  Math
-#!# ======
-#!#
-#!# This page contains a memo on math functions.
-#!#
+#r# ======
+#r#  Math
+#r# ======
+#r#
+#r# This page contains a memo on math functions.
+#r#
 
 import math
 
-#!# PEP 485: A function for testing approximate equality
+#r# PEP 485: A function for testing approximate equality
 
 _= math.isclose(5.0, 4.99998, rel_tol=1e-5)
 print(_)

@@ -1,12 +1,12 @@
-#!# ============
-#!#  Data Model
-#!# ============
-#!#
-#!# This page contains a memo of the Python 3.6 data model.
-#!#
-#!# For a complete reference documentation, look at
-#!# https://docs.python.org/3/reference/datamodel.html
-#!#
+#r# ============
+#r#  Data Model
+#r# ============
+#r#
+#r# This page contains a memo of the Python 3.6 data model.
+#r#
+#r# For a complete reference documentation, look at
+#r# https://docs.python.org/3/reference/datamodel.html
+#r#
 
 ####################################################################################################
 
@@ -16,9 +16,9 @@ import os
 from Tools import *
 
 ####################################################################################################
-#!#
-#!# At __main__ level
-#!# -----------------
+#r#
+#r# At __main__ level
+#r# -----------------
 
 a_global = 1
 
@@ -27,9 +27,9 @@ print('file:', os.path.basename(__file__))
 #o#
 
 ####################################################################################################
-#!#
-#!# Basic Customisation
-#!# -------------------
+#r#
+#r# Basic Customisation
+#r# -------------------
 
 #h# print_rule()
 
@@ -68,7 +68,7 @@ class Foo:
     # def __hash__(self):
     # def __bool__(self):
 
-#!#
+#r#
 
 foo = Foo(1, 2, attr1='abc')
 #o#
@@ -104,7 +104,7 @@ print('kwdefaults:', Foo.method.__kwdefaults__) # None
 # 'return' for the return annotation, if provided.
 # print('annotations:', Foo.method.__annotations__)
 
-#!#
+#r#
 
 print(foo.method.attr1) # 'abc'
 #o#
@@ -128,16 +128,16 @@ class FooWithNew:
         # never called
         print_method(self, '__init__', self, args, kwargs)
 
-#!#
+#r#
 
 foo = FooWithNew(1, 2, attr1='abc')
 
 #o#
 
 ####################################################################################################
-#!#
-#!# Subclasses
-#!# ----------
+#r#
+#r# Subclasses
+#r# ----------
 
 #h# print_rule()
 
@@ -147,16 +147,16 @@ class Bar(Foo):
         print_method(self, '__init__', self, args, kwargs)
         super().__init__(*args, **kwargs)
 
-#!#
+#r#
 
 obj = Bar(1, 2, attr1='abc')
 
 #o#
 
 ####################################################################################################
-#!#
-#!# Customizing Attribute Access
-#!# ----------------------------
+#r#
+#r# Customizing Attribute Access
+#r# ----------------------------
 
 #h# print_rule()
 
@@ -176,7 +176,7 @@ class Attributes:
 
     # def __dir__(self):
 
-#!#
+#r#
 
 obj = Attributes()
 print(obj.attr1)
@@ -197,22 +197,22 @@ class Attributes2:
         # return type.__getattribute__(self, name)
         # return object.__getattribute__(self, name)
 
-#!#
+#r#
 
 obj = Attributes2()
 #print(obj.attr1)
 #obj.foo
 
-##o#
+#o#
 
 ####################################################################################################
-#!#
-#!# Implementing Descriptors
-#!# ------------------------
+#r#
+#r# Implementing Descriptors
+#r# ------------------------
 
 #h# print_rule()
 
-#!# :frompy:`3.6` :feature:`__set_name__`  `PEP 487 - Descriptor Protocol Enhancements <https://www.python.org/dev/peps/pep-0487>`_
+#r# :frompy:`3.6` :feature:`__set_name__`  `PEP 487 - Descriptor Protocol Enhancements <https://www.python.org/dev/peps/pep-0487>`_
 
 class Descriptor:
 
@@ -240,7 +240,7 @@ class Descriptor:
 class UsingDescriptor:
     attr1 = Descriptor('attr1', 1) # class __set_name__(__main__.UsingDescriptor, 'attr1')
 
-#!# Invoking Descriptors
+#r# Invoking Descriptors
 
 obj = UsingDescriptor()
 print(obj.attr1) # call __get__
@@ -250,9 +250,9 @@ del obj.attr1 # call __delete__
 #o#
 
 ####################################################################################################
-#!#
-#!# Slots
-#!# -----
+#r#
+#r# Slots
+#r# -----
 
 #h# print_rule()
 
@@ -260,7 +260,7 @@ class Slotted:
 
     __slots__ = ('x', 'y')
 
-#!#
+#r#
 
 obj = Slotted()
 print(obj.__slots__)
@@ -270,9 +270,9 @@ obj.y = 2
 #o#
 
 ####################################################################################################
-#!#
-#!# Properties
-#!# ----------
+#r#
+#r# Properties
+#r# ----------
 
 #h# print_rule()
 
@@ -290,13 +290,13 @@ class Property:
     x = property(get_x, set_x, del_x, "I'm the 'x' property.")
 
 ####################################################################################################
-#!#
-#!# Customising Class Creation
-#!# --------------------------
-#!#
-#!# :frompy:`3.6`
-#!#
-#!# `PEP 487 - Simpler customization of class creation <https://www.python.org/dev/peps/pep-0487>`_
+#r#
+#r# Customising Class Creation
+#r# --------------------------
+#r#
+#r# :frompy:`3.6`
+#r#
+#r# `PEP 487 - Simpler customization of class creation <https://www.python.org/dev/peps/pep-0487>`_
 
 #h# print_rule()
 
@@ -313,8 +313,8 @@ obj = Philosopher()
 obj = AustralianPhilosopher()
 #o#
 
-Subclass registration
-~~~~~~~~~~~~~~~~~~~~~
+#r# Subclass registration
+#r# ~~~~~~~~~~~~~~~~~~~~~
 
 class PluginBase:
     subclasses = []
@@ -334,9 +334,9 @@ print(Plugin1.subclasses)
 #o#
 
 ####################################################################################################
-#!#
-#!# Metaclass
-#!# ---------
+#r#
+#r# Metaclass
+#r# ---------
 
 #h# print_rule()
 
@@ -392,11 +392,11 @@ obj = SubMetaclassed(1, 2, attr1='abc')
 #o#
 
 ####################################################################################################
-#!#
-#!# Customising Instance and Subclass Checks
-#!# ----------------------------------------
-#!#
-#!# `PEP 3119 - Introducing Abstract Base Classes <https://www.python.org/dev/peps/pep-3119>`_
+#r#
+#r# Customising Instance and Subclass Checks
+#r# ----------------------------------------
+#r#
+#r# `PEP 3119 - Introducing Abstract Base Classes <https://www.python.org/dev/peps/pep-3119>`_
 
 class CheckableMetaclass(type):
 
@@ -421,9 +421,9 @@ print(issubclass(subobj.__class__, CheckableClass))
 #o#
 
 ####################################################################################################
-#!#
-#!# Emulating Callable Objects
-#!# --------------------------
+#r#
+#r# Emulating Callable Objects
+#r# --------------------------
 
 #h# print_rule()
 
@@ -432,7 +432,7 @@ class Callable:
     def __call__(self, *args, **kwargs):
         print_method(self, '__call__', args, kwargs)
 
-#!#
+#r#
 
 obj = Callable()
 obj(1, 2, attr1='abc') # call Callable.__call__
@@ -440,9 +440,9 @@ obj(1, 2, attr1='abc') # call Callable.__call__
 #o#
 
 ####################################################################################################
-#!#
-#!# Emulating Container Types
-#!# -------------------------
+#r#
+#r# Emulating Container Types
+#r# -------------------------
 
 #h# print_rule()
 
@@ -489,7 +489,7 @@ class Container:
         print_method(self, '__contains__', item)
         return item in self._values
 
-#!#
+#r#
 
 obj = Container(*range(5))
 print(obj[1])
@@ -502,9 +502,9 @@ print(1 in obj)
 #o#
 
 ####################################################################################################
-#!#
-#!# Emulating Numeric Types
-#!# -----------------------
+#r#
+#r# Emulating Numeric Types
+#r# -----------------------
 
 class Numeric:
 
@@ -674,9 +674,9 @@ class Numeric:
         pass
 
 ####################################################################################################
-#!#
-#!# With Statement Context Managers
-#!# -------------------------------
+#r#
+#r# With Statement Context Managers
+#r# -------------------------------
 
 class ContextManager:
 
@@ -690,7 +690,7 @@ class ContextManager:
     def __exit__(self, exc_type, exc_value, traceback):
         print_method(self, '__exit__', self, exc_type, exc_value, traceback)
 
-#!#
+#r#
 
 with ContextManager(1, 2, attr1='abc') as obj:
     print('here', obj)
@@ -706,27 +706,27 @@ except NameError as exception:
 #o#
 
 ####################################################################################################
-#!#
-#!# Coroutines
-#!# ----------
+#r#
+#r# Coroutines
+#r# ----------
 
-#!# Awaitable Objects
-#!# ~~~~~~~~~~~~~~~~~
+#r# Awaitable Objects
+#r# ~~~~~~~~~~~~~~~~~
 
 # object.__await__(self)
 
-#!# Coroutine Objects
-#!# ~~~~~~~~~~~~~~~~~
+#r# Coroutine Objects
+#r# ~~~~~~~~~~~~~~~~~
 
 # coroutine.send(value)
 # coroutine.throw(type[, value[, traceback]])
 # coroutine.close()
 
-#!# Asynchronous Iterators
-#!# ~~~~~~~~~~~~~~~~~~~~~~
-#!#
-#!# An asynchronous iterable is able to call asynchronous code in its __aiter__ implementation, and
-#!# an asynchronous iterator can call asynchronous code in its __anext__ method.
+#r# Asynchronous Iterators
+#r# ~~~~~~~~~~~~~~~~~~~~~~
+#r#
+#r# An asynchronous iterable is able to call asynchronous code in its __aiter__ implementation, and
+#r# an asynchronous iterator can call asynchronous code in its __anext__ method.
 
 class Reader:
 
@@ -745,11 +745,11 @@ class Reader:
             raise StopAsyncIteration
         return val
 
-#!# Asynchronous Context Managers
-#!# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#!#
-#!# An asynchronous context manager is a context manager that is able to suspend execution in its
-#!# __aenter__ and __aexit__ methods.
+#r# Asynchronous Context Managers
+#r# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#r#
+#r# An asynchronous context manager is a context manager that is able to suspend execution in its
+#r# __aenter__ and __aexit__ methods.
 
 class AsyncContextManager:
 
