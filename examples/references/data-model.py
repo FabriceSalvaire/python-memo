@@ -313,6 +313,9 @@ obj = Philosopher()
 obj = AustralianPhilosopher()
 #o#
 
+Subclass registration
+~~~~~~~~~~~~~~~~~~~~~
+
 class PluginBase:
     subclasses = []
 
@@ -327,6 +330,7 @@ class Plugin2(PluginBase):
     pass
 
 print(PluginBase.subclasses)
+print(Plugin1.subclasses)
 #o#
 
 ####################################################################################################
