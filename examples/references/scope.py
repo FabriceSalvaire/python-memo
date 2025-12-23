@@ -3,6 +3,14 @@
 #r# =======
 #r#
 #r# This page contains a memo on scope.
+#r#
+#r# *Statement and buitins:*
+#r#
+#r# * :code:`global` https://docs.python.org/3/reference/simple_stmts.html#global
+#r# * :code:`nonlocal` https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement
+#r#
+#r# * :code:`globals()` https://docs.python.org/3/library/functions.html#globals
+#r# * :code:`locals()` https://docs.python.org/3/library/functions.html#locals
 
 ####################################################################################################
 
