@@ -131,6 +131,8 @@ There are also several more special blocks available:
 Source Code
 -----------
 
+.. Fixme: :code:``
+
 Literal code blocks (:duref:`ref <literal-blocks>`) are introduced by ending a
 paragraph with the special marker ``::``.  The literal block must be indented
 (and, like all paragraphs, separated from the surrounding ones by blank lines)::
