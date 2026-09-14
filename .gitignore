@@ -39,3 +39,8 @@ resources/
 
 tools/make-readme
 tools/upload-www
+
+old-setup/README.html
+old-setup/README.md
+old-setup/setup.py
+old-setup/setup_data.py
