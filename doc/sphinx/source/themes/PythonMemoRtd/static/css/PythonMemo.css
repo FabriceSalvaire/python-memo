@@ -111,6 +111,9 @@ div.getthecode-header a {
 div.getthecode-header li.getthecode-filename-link span {
     display: none;
 }
+div.getthecode-header li.getthecode-notebook-link span {
+    display: none;
+}
 
 .rst-content div.getthecode-header li.show-code-button {
     cursor: pointer;

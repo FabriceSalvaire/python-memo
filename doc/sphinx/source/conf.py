@@ -81,7 +81,7 @@ extensions = [
 templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext'}
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
@@ -133,7 +133,11 @@ exclude_patterns = []
 # show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+# https://pygments.org/styles
+# pygments_style = 'sphinx'
+# pygments_style = 'monokai'
+# lightbulb
+pygments_style = 'trac'
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
@@ -161,7 +165,6 @@ autodoc_default_flags = [
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#html_theme = 'PythonMemo'
 html_theme = 'PythonMemoRtd'
 # html_theme = 'sphinx_rtd_theme'
 
@@ -292,7 +295,7 @@ latex_logo = None
 ####################################################################################################
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
 ####################################################################################################
 #
